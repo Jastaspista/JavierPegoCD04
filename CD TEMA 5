@@ -1,0 +1,1176 @@
+Diseño orientado a objetos. Elaboración de diagramas estructurales.
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.En la empresa siguen trabajando en diferentes aplicaciones con un nivel alto de complejidad, se desarrolla para diferentes plataformas, en entornos de ventanas, para la web, dispositivos móviles, etc. Ada lleva un tiempo observando a su equipo, y a pesar de que ya han hablado de las diferentes fases de desarrollo del software, y que están descubriendo nuevos entornos de programación que han facilitado su trabajo enormemente, se ha dado cuenta de que todavía hay una asignatura pendiente, sus empleados no utilizan herramientas ni crean documentos en las fases previas del desarrollo de una aplicación, a pesar de ser algo tan importante como el resto de fases del proceso de elaboración de software. Tampoco construyen modelos que ayuden a hacerse una idea de como resultará el proyecto. Estos documentos y modelos son muy útiles para que todo el mundo se ponga de acuerdo en lo que hay que hacer, y cómo van a hacerlo.
+
+Como Ada muy bien conoce, un proyecto de software tendrá éxito sólo si produce un software de calidad, consistente y sobre todo que satisfaga las necesidades de los usuarios que van a utilizar el producto resultante.
+
+Para desarrollar software de calidad duradera, hay que idear una sólida base arquitectónica que sea flexible al cambio.
+
+Incluso para producir software de sistemas pequeños sería bueno hacer análisis y modelado ya que redunda en la calidad, pero lo que si es cierto, es que cuanto más grande y complejos son los sistemas más importante es hacer un buen modelado ya que nos ayudará a entender el comportamiento del sistema en su totalidad. Y cuando se trata de sistemas complejos el modelado nos dará una idea de los recursos necesarios (tanto humanos como materiales) para abordar el proyecto. También nos dará una visión más amplia de cómo abordar el problema para darle la mejor solución.
+
+Ada se da cuenta de que el equipo necesita conocer procedimientos de análisis y diseño de software, así como alguna herramienta que permita generar los modelos y la documentación asociada, así que decide reunir a su equipo para empezar a tratar este tema...
+
+Ilustración del logotipo del Ministerio de Educación y Formación Profesional.
+Ministerio de Educación y Formación Profesional. (Dominio público)
+Materiales formativos de FP Online propiedad del Ministerio de Educación y Formación Profesional.
+Aviso Legal
+
+1.- Programación orientada a objetos
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.
+Ya en la sala de reuniones...
+
+—Deberíamos empezar por revisar cual es la situación actual. Como ya sabéis existen diferentes lenguajes de programación que se comportan de manera diferente, y esto determina en gran medida el enfoque que se le da al análisis previo. No es lo mismo un lenguaje estructurado que uno orientado a objetos. Tendríamos que conocer las características de ambos enfoques para entender un poco mejor cómo se analizan.
+
+—Es cierto —contesta Juan —desde que empecé en el mundo de la informática esto ha cambiado un poco, así que he tenido que ir investigando para adaptarme a los nuevos lenguajes de programación, si queréis, os pongo al día brevemente, ...
+
+La construcción de software es un proceso cuyo objetivo es dar solución a problemas utilizando una herramienta informática y tiene como resultado la construcción de un programa informático. Como en cualquier otra disciplina en la que se obtenga un producto final de cierta complejidad, si queremos obtener un producto de calidad, es preciso realizar un proceso previo de análisis y especificación del proceso que vamos a seguir, y de los resultados que pretendemos conseguir.
+
+El enfoque estructurado.
+
+Sin embargo, cómo se hace es algo que ha ido evolucionando con el tiempo, en un principio se tomaba el problema de partida y se iba sometiendo a un proceso de división en subproblemas más pequeños reiteradas veces, hasta que se llegaba a problemas elementales que se podía resolver utilizando una función. Luego las funciones se hilaban y entretejían hasta formar una solución global al problema de partida. Era, pues, un proceso centrado en los procedimientos, se codificaban mediante funciones que actuaban sobre estructuras de datos, por eso a este tipo de programación se le llama programación estructurada. Sigue una filosofía en la que se intenta aproximar qué hay que hacer, para así resolver un problema.
+
+Enfoque orientado a objetos.
+
+La orientación a objetos ha roto con esta forma de hacer las cosas. Con este nuevo paradigma el proceso se centra en simular los elementos de la realidad asociada al problema de la forma más cercana posible. La abstracción que permite representar estos elementos se denomina objeto, y tiene las siguientes características:
+
+Está formado por un conjunto de atributos, que son los datos que le caracterizan y
+Un conjunto de operaciones que definen su comportamiento. Las operaciones asociadas a un objeto actúan sobre sus atributos para modificar su estado. Cuando se indica a un objeto que ejecute una operación determinada se dice que se le pasa un mensaje.
+Las aplicaciones orientadas a objetos están formadas por un conjunto de objetos que interaccionan enviándose mensajes para producir resultados. Los objetos similares se abstraen en clases, se dice que un objeto es una instancia de una clase.
+
+Cuando se ejecuta un programa orientado a objetos ocurren tres sucesos:
+
+Primero, los objetos se crean a medida que se necesitan.
+Segundo. Los mensajes se mueven de un objeto a otro (o del usuario a un objeto) a medida que el programa procesa información o responde a la entrada del usuario.
+Tercero, cuando los objetos ya no se necesitan, se borran y se libera la memoria.
+
+
+
+
+
+Para saber más
+Todo acerca del mundo de la orientación a objetos se encuentra en la página oficial del
+
+Grupo de gestión de objetos.
+
+1.1.- Conceptos de orientación a objetos.
+Caso práctico
+ Primer plano de un hombre joven, de frente, de pelo corto y moreno, con expresión seria, camisa de rayas azules.
+—De acuerdo, buen resumen Juan, sin embargo, los últimos proyectos que han entrado a la empresa se han desarrollo en su totalidad mediante software orientado a objetos, hemos usado PHP con Javascript, pero sobre todo Java, que es un lenguaje basado en objetos, así que sería necesario que analizáramos con un poco más de detenimiento el enfoque orientado a objetos, que características presenta, y que ventajas tiene sobre otros.
+
+—¡Gracias, Ada!, también tengo alguna información sobre eso...
+
+Como hemos visto la orientación a objetos trata de acercarse al contexto del problema lo más posible por medio de la simulación de los elementos que intervienen en su resolución y basa su desarrollo en los siguientes conceptos:
+
+Abstracción: Permite capturar las características y comportamientos similares de un conjunto de objetos con el objetivo de darles una descripción formal. La abstracción es clave en el proceso de análisis y diseño orientado a objetos, ya que mediante ella podemos llegar a armar un conjunto de clases que permitan modelar la realidad, o el problema que se quiere atacar.
+Encapsulación: Organiza los datos y métodos de una clase, evitando el acceso a datos por cualquier otro medio distinto a los definidos. El estado de los objetos sólo debería poder ser modificado desde métodos de la propia clase Esto permite aumentar la cohesión de los componentes del sistema. Algunos autores confunden este concepto con el principio de ocultación, principalmente porque se suelen emplear conjuntamente.
+Modularidad: Propiedad que permite subdividir una aplicación en partes más pequeñas (llamadas módulos), cada una de las cuales debe ser tan independiente como sea posible de la aplicación en sí y de las restantes partes. En orientación a objetos es algo consustancial, ya que los objetos se pueden considerar los módulos más básicos del sistema.
+Principio de ocultación: La implementación de una clase sólo es conocida por los responsables de su desarrollo. Gracias a la ocultación, ésta podrá ser modificada para mejorar su algoritmo de implementación sin tener repercusión en el resto del programa. Principalmente se oculta las propiedades de un objeto contra su modificación por quien no tenga derecho a acceder a ellas. Reduce la propagación de efectos colaterales cuando se producen cambios.
+Polimorfismo: Consiste en reunir bajo el mismo nombre comportamientos diferentes. La selección de uno u otro depende del objeto que lo ejecute.
+Herencia: Relación que se establece entre objetos en los que unos utilizan las propiedades y comportamientos de otros formando una jerarquía. Los objetos heredan las propiedades y el comportamiento de todas las clases a las que pertenecen.
+Recolección de basura: Técnica por la cual el entorno de objetos se encarga de destruir automáticamente los objetos, y por tanto desvincular su memoria asociada, que hayan quedado sin ninguna referencia a ellos.
+
+
+
+
+
+
+1.2.- Ventajas de la orientación a objetos.
+Caso práctico
+ Primer plano de un hombre joven, de frente, de pelo corto y moreno, con expresión seria, camisa de rayas azules.—Además la orientación a objetos cuenta con una serie de ventajas que nos vienen muy bien a los que nos dedicamos a la construcción de software, sobre todo porque nos facilitan su construcción y mantenimiento al dividir un problema en módulos claramente independientes y que, además, cuando ya tenemos suficientemente probados y completos podemos utilizar en otras aplicaciones, la verdad que ahorra bastante tiempo y esfuerzo... —argumenta Juan.
+
+Este paradigma tiene las siguientes ventajas con respecto a otros:
+
+Permite desarrollar software en mucho menos tiempo, con menos coste y de mayor calidad gracias a la reutilización porque al ser completamente modular facilita la creación de código reusable dando la posibilidad de reutilizar parte del código para el desarrollo de una aplicación similar.
+Se consigue aumentar la calidad de los sistemas, haciéndolos más extensibles ya que es muy sencillo aumentar o modificar la funcionalidad de la aplicación modificando las operaciones.
+El software orientado a objetos es más fácil de modificar y mantener porque se basa en criterios de modularidad y encapsulación en el que el sistema se descompone en objetos con unas responsabilidades claramente especificadas e independientes del resto.
+La tecnología de objetos facilita la adaptación al entorno y el cambio haciendo aplicaciones escalables. Es sencillo modificar la estructura y el comportamiento de los objetos sin tener que cambiar la aplicación.
+
+
+
+Autoevaluación
+¿Cual es la afirmación más adecuada al paradigma de orientación a objetos?
+
+
+Permite crear aplicaciones basadas en módulos de software que representan objetos del entorno del sistema, por lo que no son apropiados para dar solución a otros problemas.
+
+Tiene como objetivo la creación de aplicaciones basadas en abstracciones de datos estáticas y de difícil ampliación.
+
+
+Permite crear aplicaciones cuyo mantenimiento es complicado porque las modificaciones influyen a todos los objetos del sistema.
+
+Permite crear aplicaciones basadas en módulos que pueden reutilizarse, de fácil modificación y que permiten su ampliación en función del crecimiento del sistema.
+1.3.- Clases, atributos y métodos.
+Caso práctico
+Primer plano de un hombre joven, de frente, de pelo corto y moreno, con expresión seria, camisa de rayas azules.
+—De acuerdo, ahora conocemos las características básicas y ventajas de usar la orientación a objetos, ¿qué más nos haría falta? ¿Quizá sus estructuras básicas?
+
+—Yo puedo contaros algo sobre eso, —comenta Juan— lo estudié en el Ciclo Formativo.
+
+Los objetos de un sistema se abstraen, en función de sus características comunes, en clases. Una clase está formada por un conjunto de procedimientos y datos que resumen características similares de un conjunto de objetos. La clase tiene dos propósitos: definir abstracciones y favorecer la modularidad.
+
+Una clase se describe por su nombre (identifica cada clase del programa) y por un conjunto de elementos que se denominan miembros. Estos miembros son:
+
+Atributos: conjunto de características asociadas a una clase. Pueden verse como una relación binaria entre una clase y cierto dominio formado por todos los posibles valores que puede tomar cada atributo. Cuando toman valores concretos dentro de su dominio definen el estado del objeto. Se definen por su nombre y su tipo, que puede ser simple o compuesto como otra clase.
+Protocolo: Operaciones (métodos, mensajes) que manipulan el estado. Un método es el procedimiento o función que se invoca para actuar sobre un objeto. Un mensaje es el resultado de cierta acción efectuada por un objeto. Los métodos determinan como actúan los objetos cuando reciben un mensaje, es decir, cuando se requiere que el objeto realice una acción descrita en un método se le envía un mensaje. El conjunto de mensajes a los cuales puede responder un objeto se le conoce como protocolo del objeto.
+Por ejemplo, si consideramos un objeto icono en una aplicación gráfica; tendrá como atributos el tamaño, o la imagen que muestra; y su protocolo puede constar de mensajes producidos al pulsar el botón  sobre el objeto. De esta forma los mensajes son el único conducto que conectan al objeto con el mundo exterior.
+
+Los valores asignados a los atributos de un objeto concreto hacen a ese objeto ser único. La clase define sus características generales y su comportamiento.
+
+Autoevaluación
+Un objeto es una concreción de una clase, es decir, en un objeto se concretan valores para los atributos definidos en la clase, y además, estos valores podrán modificarse a través del paso de mensajes al objeto.
+
+Verdadero.
+
+Falso.
+1.4.- Visibilidad.
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.
+—Pues creo que ya lo tenemos todo...
+
+—No creas, —dice Ada que siempre sabe algo más, que el resto desconoce— en orientación a objetos, existe un concepto muy importante, que es el de visibilidad, permite definir hasta qué punto son accesibles los atributos y métodos de una clase, por regla general, cuando definimos atributos los ocultamos, para que nadie pueda modificar el estado del objeto, y dejamos los métodos abiertos, porque son los que permiten el paso de mensajes entre objetos...
+
+El principio de ocultación es una propiedad de la orientación a objetos que consiste en aislar el estado de manera que sólo se puede cambiar mediante las operaciones definidas en una clase. Este aislamiento protege a los datos de que sean modificados por alguien que no tenga derecho a acceder a ellos, eliminando efectos secundarios e interacciones. Da lugar a que las clases se dividan en dos partes:
+
+Interfaz: captura la visión externa de una clase, abarcando la abstracción del comportamiento común a los ejemplos de esa clase.
+Implementación: comprende como se representa la abstracción, así como los mecanismos que conducen al comportamiento deseado.
+Existen distintos niveles de ocultación que se implementan en lo que se denomina visibilidad. Es una característica que define el tipo de acceso que se permite a atributos y métodos y que podemos establecer como:
+
+Público: Se pueden acceder desde cualquier clase y cualquier parte del programa.
+Privado: Sólo se pueden acceder desde operaciones de la clase.
+Protegido: Sólo se pueden acceder desde operaciones de la clase o de clases derivadas en cualquier nivel.
+Como norma general a la hora de definir la visibilidad tendremos en cuenta que:
+
+El estado debe ser privado. Los atributos de una clase se deben modificar mediante métodos de la clase creados a tal efecto.
+Las operaciones que definen la funcionalidad de la clase deben ser públicas.
+Las operaciones que ayudan a implementar parte de la funcionalidad deben ser privadas (si no se utilizan desde clases derivadas) o protegidas (si se utilizan desde clases derivadas).
+
+Autoevaluación
+¿Desde dónde se puede acceder al estado de una clase?
+
+Desde cualquier zona de la aplicación.
+
+Desde la clase y sus clases derivadas.
+
+Solo desde los métodos de la clase.
+1.5.- Objetos. Instanciación.
+Caso práctico
+Primer plano de un chico joven, de unos veinte años, de frente, con una leve sonrisa, pelo moreno y corto, viste camiseta amarilla con un dibujo.
+Antonio ha asistido a esta reunión como parte de su formación laboral, pero se encuentra algo perdido entre tantos conceptos:
+
+—A ver, estamos todo el tiempo hablando de que las clases tienen atributos y métodos, luego, que los objetos se pasan mensajes, que son los que modifican los atributos, entonces, ¿no son lo mismo?, ¿qué diferencia hay?
+
+Una clase es una abstracción que define las características comunes de un conjunto de objetos relevantes para el sistema.
+
+Cada vez que se construye un objeto en un programa informático a partir de una clase se crea lo que se conoce como instancia de esa clase. Cada instancia en el sistema sirve como modelo de un objeto del contexto del problema relevante para su solución, que puede realizar un trabajo, informar y cambiar su estado, y "comunicarse" con otros objetos en el sistema, sin revelar cómo se implementan estas características.
+
+Un objeto se define por:
+
+Su estado: es la concreción de los atributos definidos en la clase a un valor concreto.
+Su comportamiento: definido por los métodos públicos de su clase.
+Su tiempo de vida: intervalo de tiempo a lo largo del programa en el que el objeto existe. Comienza con su creación a través del mecanismo de instanciación y finaliza cuando el objeto se destruye.
+La encapsulación y el ocultamiento aseguran que los datos de un objeto están ocultos, con lo que no se pueden modificar accidentalmente por funciones externas al objeto.
+
+Existe un caso particular de clase, llamada clase abstracta, que por sus características, no puede ser instanciada. Se suelen usar para definir métodos genéricos relacionados con el sistema que no serán traducidos a objetos concretos, o para definir las interfaces de métodos, cuya implementación se postpone a futuras clases derivadas.
+
+
+Citas para pensar
+Mientras que un objeto es una entidad que existe en el tiempo y el espacio, una clase representa sólo una abstracción, "la esencia" del objeto, si se puede decir así.
+
+Grady Booch
+
+Ejemplo de objetos:
+
+Objetos físicos: aviones en un sistema de control de tráfico aéreo, casas, parques.
+Elementos de interfaces gráficas de usuario: ventanas, menús, teclado, cuadros de diálogo.
+Animales: animales vertebrados, animales invertebrados.
+Tipos de datos definidos por el usuario: Datos complejos, Puntos de un sistema de coordenadas.
+Alimentos: carnes, frutas, verduras.
+Existe un caso particular de clase, llamada clase abstracta, que, por sus características, no puede ser instanciada. Se suelen usar para definir métodos genéricos relacionados con el sistema que no serán traducidos a objetos concretos, o para definir métodos de base para clases derivadas.
+
+2.- UML.
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.Ahora que el equipo conoce los fundamentos de la orientación a objetos llega el momento de ver como pueden poner en práctica los conocimientos adquiridos.
+
+Ada está interesada, sobre todo, en que sean capaces de representar las clases de los proyectos que están desarrollando y como se relacionan entre ellas. Para ello decide comenzar comentando las características de un lenguaje de modelado de sistemas orientados a objetos llamado UML. Este lenguaje permite construir una serie de modelos, a través de diagramas de diferentes visiones de un proyecto.
+
+—Es importante apreciar como estos modelos, nos van a permitir poner nuestras ideas en común utilizando un lenguaje específico, facilitarán la comunicación, que como sabéis, es algo esencial para que nuestro trabajo en la empresa sea de calidad.
+
+Citas para pensar
+Una empresa de software con éxito es aquella que produce de manera consistente software de calidad que satisface las necesidades de los usuarios. El modelado es la parte esencial de todas las actividades que conducen a la producción de software de calidad.
+
+UML (Unified Modeling Language o Lenguaje Unificado de Modelado) es un conjunto de herramientas que permite modelar, construir y documentar los elementos que forman un sistema software orientado a objetos. Se ha convertido en el estándar de facto de la industria, debido a que ha sido concebido por los autores de los tres métodos más usados de orientación a objetos: Grady Booch, Ivar Jacobson y Jim Rumbaugh, de hecho las raíces técnicas de UML son:
+
+OMT - Object Modeling Technique (Rumbaugh et al.)
+Método-Booch (G. Booch)
+OOSE - Object-Oriented Software Engineering (I. Jacobson)
+UML permite a los desarrolladores y desarrolladoras visualizar el producto de su trabajo en esquemas o diagramas estandarizados denominados modelos que representan el sistema desde diferentes perspectivas.
+
+
+¿Porqué es útil modelar?
+
+Porque permite utilizar un lenguaje común que facilita la comunicación entre el equipo de desarrollo.
+Con UML podemos documentar todos los artefactos de un proceso de desarrollo (requisitos, arquitectura, pruebas, versiones,...) por lo que se dispone de documentación que trasciende al proyecto.
+Hay estructuras que trascienden lo representable en un lenguaje de programación, como las que hacen referencia a la arquitectura del sistema, utilizando estas tecnologías podemos incluso indicar qué módulos de software vamos a desarrollar y sus relaciones, o en qué nodos hardware se ejecutarán cuando trabajamos con sistemas distribuidos.
+Permite especificar todas las decisiones de análisis, diseño e implementación, construyéndose modelos precisos, no ambiguos y completos.
+Además UML puede conectarse a lenguajes de programación mediante ingeniería directa e inversa, como veremos.
+
+
+
+
+
+
+2.1.- Familiarizándonos con algunos conceptos UML.
+A continuación se describen algunos de los términos típicamente usados en UML. Se acompaña de un ejemplo relacionado con la creación de una melodía musical.
+
+2.1.1.- Notación.
+Una notación es un conjunto de símbolos y técnicas para combinarlos, que en el contexto UML, permiten crear diagramas normalizados. Estas representaciones posibilitan al analista o desarrollador describir el comportamiento del sistema (análisis) y los detalles de una arquitectura (diseño) de forma no ambigua.
+
+Que una notación sea detallada no significa que todos sus aspectos deban ser utilizados en todas las ocasiones. Utilizar UML debe facilitar el desarrollo/entendimiento de todos los participantes en el proyecto y no complicarlo. ¡Si se crean todos los diagramas al máximo nivel de detalle podría liar más que aclarar!.
+
+Las notaciones UML deben ser independientes de los lenguajes de programación.
+
+Un Diagrama es una representación gráfica de una colección de elementos de modelado (modelo), a menudo dibujada como un grafo con vértices conectados por arcos (notación).
+
+Notación musical-1. La notación musical formal considera términos como pentagrama; notas redonda, blanca, negra, corchea, semicorchea, fusa, semifusa; clave de sol, fa, do ...
+Imagen que muestra un pentagrama con las diferentes notaciones musicales.
+
+Notación musical-2. Otra alternativa, útil para inexpertos, podría ser escribir en una/varias líneas la secuencia de notas que forman una melodía. DO - RE - MI - FA - SOL - LA -SI.
+2.1.2.- Modelos y herramientas
+Un modelo captura una vista de un sistema del mundo real. Es una abstracción de dicho sistema considerando un cierto propósito. Así, el modelo describe completamente aquellos aspectos del sistema que son relevantes al propósito del modelo, y a un apropiado nivel de detalle.
+
+Volviendo al ejemplo musical, la melodía puede mostrarse desde diferentes vistas.
+
+Vista - 1. Usando la primera notación del apartado anterior.
+
+Imagen que muestra un pentagrama con una melodía mostrada de diferentes formas.
+
+
+Vista - 2. Usando la segunda notación del apartado anterior.
+
+DO - DO - RE - DO - FA - MI - DO - DO - RE - DO -SOL - FA - FA -LA - DO - LA - FA- MI - RE
+
+Vista - 3. La interpretación de la melodía sería otra vista distinta. Incluso se pueden considerar diferentes vistas en función del compás, instrumento ...
+
+
+Imagen que muestra la parte izquierda de un piano.
+
+En UML existen una serie de modelos (diagramas) que nos proporcionan vistas en las fases de  análisis y diseño.
+
+Cada modelo es completo desde su punto de vista del sistema, sin embargo, existen relaciones de trazabilidad entre los diferentes modelos.
+
+Una herramienta es el soporte automático de una notación. En nuestro ejemplo hablaríamos de un lápiz, un cuaderno musical, un programa de ordenador, un órgano ....
+
+Para el desarrollo de diagramas UML en este curso se usará la aplicación/herramienta UMLet.
+
+
+
+2.1.3.- Métodos
+Un método es un proceso disciplinado para generar uno/varios modelos que describen aspectos de un sistema de software en desarrollo, utilizando alguna notación bien definida.
+
+2.2.- Tipos de diagramas UML.
+Caso práctico
+Primer plano de un chico joven, de unos veinte años, de frente, con una leve sonrisa, pelo moreno y corto, viste camiseta amarilla con un dibujo.
+
+Cuando María estudió el ciclo formativo no llegó a ver estas tecnologías con tanto detenimiento, así que está asimilándolo todo poco a poco:
+
+—De acuerdo, UML describe el sistema mediante una serie de modelos que ofrecen diferentes puntos de vista. Pero ¿qué tenemos que hacer para representar un modelo?, ¿en que consiste exactamente?
+
+—Utilizaremos diagramas, que son unos grafos en los que los nodos definen los elementos del diagrama, y los arcos las relaciones entre ellos.
+
+
+UML define un sistema como una colección de modelos que describen sus diferentes perspectivas. Los modelos se implementan en una serie de diagramas que son representaciones gráficas de una colección de elementos de modelado, a menudo dibujado como un grafo conexo de arcos (relaciones) y vértices (otros elementos del modelo).
+
+Los diagramas UML se clasifican en:
+
+Diagramas estructurales. Representan la visión estática del sistema. Especifican clases y objetos y como se distribuyen físicamente en el sistema.
+Diagramas de comportamiento. Muestran la conducta en tiempo de ejecución del sistema, tanto desde el punto de vista del sistema completo como de las instancias u objetos que lo integran.
+En la siguiente imagen aparecen todos los diagramas organizados según su categoría:
+
+
+Esquema en forma de árbol jerárquico de cuadros que se lee de izquierda a derecha. Se parte del nodo raíz con el texto Diagramas UML, del que parten dos ramas, en primer lugar, hacia arriba, tenemos el nodo Diagrama estructural, del que parten otros seis nodos, con los nombres Diagrama de clases, Diagrama de estructuras compuestas,  Diagrama de componentes, Diagrama de despliegue, Diagrama de objetos y Diagrama de paquetes. De la segunda rama, llamada Diagramas de comportamiento surgen cuatro nodos con el texto Diagrama de actividad, Diagrama de interacción, Diagrama de casos de uso y Diagrama de máquina de estados. Del nodo Diagrama de interacción surgen los siguientes nodos: Diagrama de secuencia, Diagrama de colaboración, Diagrama de resumen de interacción y Diagrama de tiempo. La unión entre nodos hijos y nodos padres se hace a través de lineas terminadas en triángulos que son el símbolo de la herencia.
+
+
+En total se describen trece diagramas para modelar diferentes aspectos de un sistema, sin embargo no es necesario usarlos todos, dependerá del tipo de aplicación a generar y del sistema, es decir, se debe generar un diagrama solo cuando sea necesario.
+
+Diagramas estructurales.
+Diagrama de clases. Muestra los elementos del modelo estático abstracto, y está formado por un conjunto de clases y sus relaciones.
+Diagrama de objetos. Muestra los elementos del modelo estático en un momento concreto, habitualmente en casos especiales de un diagrama de clases o de comunicaciones, y está formado por un conjunto de objetos y sus relaciones.
+Diagrama de componentes. Especifica la organización lógica de la implementación de una aplicación, indicando sus componentes, sus interrelaciones, interacciones y sus interfaces públicas y las dependencias entre ellos.
+Diagrama de despliegue. Representa la configuración del sistema en tiempo de ejecución. Aparecen los nodos de procesamiento y sus componentes. Exhibe la ejecución de la arquitectura del sistema. Incluye nodos, ambientes operativos tanto de hardware como de software, así como las interfaces que las conectan, es decir, muestra como los componentes de un sistema se distribuyen entre los ordenadores que los ejecutan. Se utiliza cuando tenemos sistemas distribuidos.
+Diagrama de estructuras compuestas. Muestra la estructura interna de una clase, e incluye los puntos de interacción de esta clase con otras partes del sistema.
+Diagrama de paquetes. Exhibe cómo los elementos del modelo se organizan en paquetes, así como las dependencias entre esos paquetes. Suele ser útil para la gestión de sistemas de mediano o gran tamaño.
+Diagramas de comportamiento.
+Diagrama de casos de uso. Representa las acciones a realizar en el sistema desde el punto de vista de los usuarios. En él se representan las acciones, los usuarios y las relaciones entre ellos. Sirven para especificar la funcionalidad y el comportamiento de un sistema mediante su interacción con los usuarios y/u otros sistemas.
+Diagrama de estado de la máquina. Describe el comportamiento de un sistema dirigido por eventos. En el que aparecen los estados que puede tener un objeto o interacción, así como las transiciones entre dichos estados. También se denomina diagrama de estado, diagrama de estados y transiciones o diagrama de cambio de estados.
+Diagrama de actividades. Muestra el orden en el que se van realizando tareas dentro de un sistema. En él aparecen los procesos de alto nivel de la organización. Incluye flujo de datos, o un modelo de la lógica compleja dentro del sistema.
+Diagramas de interacción.
+Diagrama de secuencia. Representa la ordenación temporal en el paso de mensajes. Modela la secuencia lógica, a través del tiempo, de los mensajes entre las instancias.
+Diagrama de comunicación/colaboración. Resalta la organización estructural de los objetos que se pasan mensajes. Ofrece las instancias de las clases, sus interrelaciones, y el flujo de mensajes entre ellas. Comúnmente enfoca la organización estructural de los objetos que reciben y envían mensajes.
+Diagrama de interacción. Muestra un conjunto de objetos y sus relaciones junto con los mensajes que se envían entre ellos. Cada nodo de actividad dentro del diagrama puede representar otro diagrama de interacción.
+Diagrama de tiempos. Muestra el cambio en un estado o una condición de una instancia o un rol a través del tiempo. Se usa normalmente para exhibir el cambio en el estado de un objeto en el tiempo, en respuesta a eventos externos.
+
+
+En la imagen aparecen todos los diagramas organizados según su categoría.  En total se describen trece diagramas para modelar diferentes aspectos de un sistema, sin embargo no es necesario usarlos todos, dependerá del tipo de aplicación a generar y del sistema.
+
+Citas para pensar
+Un 80% de las aplicaciones se pueden modelar con el 20% de los diagramas UML.
+2.3.- Herramientas para la elaboración de diagramas UML.
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.
+—Ahora que conocemos los diagramas que podemos generar para describir nuestro sistema, sería buena idea buscar alguna herramienta que nos ayude a elaborarlos. ¡No sería nada práctico andar todo el día con la libreta a cuestas!
+
+—Lo que nos permite conocer a un buen desarrollador es que siempre hace un buen esquema inicial de cada proyecto, y eso puede hacerse en miles de soportes, desde una libreta a un servilleta, cualquier cosa que te permita hacer un pequeño dibujo, no obstante tienes razón. El uso de herramientas, además de facilitar la elaboración de los diagramas, tiene otras ventajas, como la integración en entornos de desarrollo, con lo que podremos generar el código base de nuestra aplicación desde el propio diagrama.
+
+-¡Guau, eso sí es facilitar el trabajo!
+
+La herramienta más simple que se puede utilizar para generar diagramas es lápiz y papel, hoy día, sin embargo, podemos acceder a herramientas CASE que facilitan en gran manera el desarrollo de los diagramas UML. Estas herramientas suelen contar con un entorno de ventanas tipo wysiwyg, permiten documentar los diagramas e integrarse con otros entornos de desarrollo incluyendo la generación automática de código y procedimientos de ingeniería inversa.
+
+Podemos encontrar, entre otras, las siguientes herramientas:
+
+Rational Systems Developer de IBM: Herramienta propietaria que permite el desarrollo de proyectos software basados en la metodología UML. Desarrollada en origen por los creadores de UML ha sido recientemente absorbida por IBM. Ofrece versiones de prueba, y software libre para el desarrollo de diagramas UML.
+
+
+Para saber más
+Si sientes curiosidad puedes seguir este enlace a la página oficial de Rational Systems Developer.
+
+Visual Paradigm for UML (VP-UML): Incluye una versión para uso no comercial que se distribuye libremente sin más que registrarse para obtener un archivo de licencia (bajo licencia LGPL).
+Incluye diferentes módulos para realizar desarrollo UML, diseñar bases de datos, realizar actividades de ingeniería inversa y diseñar con Agile.
+Compatible con UML 2.0.
+Admite la generación de informes en formatos PDF, HTML y otros.
+Es compatible con los IDE de Eclipse, Visual Studio .net, IntellijDEA y NetBeans.
+Multiplataforma.
+Incluye instaladores para Windows y Linux.
+
+
+
+
+Para saber más
+Aquí tienes el enlace a la página oficial de Visual Paradigm.
+
+ArgoUML: se distribuye bajo licencia Eclipse. Soporta los diagramas de UML 1.4, y genera código para java y C++. Para poder ejecutarlo se necesita la plataforma java. Admite ingeniería directa e inversa.
+Para saber más
+Aquí tienes el enlace a  ArgoUML.
+
+UMLet: herramienta UML de código abierto y libre distribución. Dispone de un interfaz de usuario sencillo de utilizar
+Para saber más
+Si sientes curiosidad puedes seguir este enlace a la página oficial de UMLet.
+
+Autoevaluación
+Las herramienta CASE para la elaboración de diagramas UML sirven solo para la generación de los diagramas asociados al análisis y diseño de una aplicación. ¿Verdadero o falso?
+
+Verdadero.
+
+Falso.
+2.3.1.- Generación de la documentación.
+Caso práctico
+Primer plano de una chica joven, de expresión seria, con el pelo largo y rizado, viste con una camisa de color gris.
+Los chicos siguen estudiando características de la herramienta VP-UML...
+
+—Sería estupendo que después de generar un diagrama, en el que verdaderamente te has esforzado, pudieras hacer anotaciones sobre la importancia de cada clase, atributo o relación, para que, posteriormente, pudieras compartir esa información o recordarlo rápidamente cuando estuvieras programando el sistema en caso de tener que consultar algo.
+
+—No solo eso, además de generar documentación exhaustiva, la herramienta permite crear informes con ella, pasándola a un formato más cómodo de leer e interpretar en papel por el equipo de desarrollo.
+
+Ventana para añadir documentación a un diagrama de clases. En la parte de arriba aparece la palabra Documentación, a continuación un selector con el lenguaje HTML y botones de formato de texto y debajo el texto de la documentación que dice: "Representa las clases que intervienen en el sistema de la Formación Profesional a Distancia, en la que los alumnos se matriculan de un conjunto de módulos que se imparten por vía telemática. Para completar un ciclo un alumno debe completar debe cursar y aprobar todos los módulos de ese ciclo. Cada módulo es impartido por un profesor, que podrá impartir varios de los módulos del ciclo.". Debajo aparece un cuadrado blanco junto al texto Play when selected, y debajo  un círculo rojo junto a la palabra Record. 
+Como en todos los diagramas UML, podemos hacer las anotaciones que consideremos necesarias abriendo la especificación de cualquiera de los elementos, clases o relaciones, o bien del diagrama en si mismo en la pestaña "Specification".
+
+La ventana del editor cuenta con herramientas para formatear el texto y darle un aspecto bastante profesional, pudiendo añadir elementos como imágenes o hiperenlaces.
+
+También se puede grabar un archivo de voz con la documentación del elemento usando el icono Grabar.
+
+Generar informes
+
+Cuando los modelos están completos podemos generar un informe en varios formatos diferentes (HTML, PDF o Word) con la documentación que hemos escrito. Para generar un informe hacemos:
+
+Desde VP-UML accedemos a Tools >> Reports >> Report writer y seleccionamos el tipo de informe que queremos.
+
+Desde el SDE para NetBeans seleccionamos Modelin >> Reports >> Report writer.
+
+En ambos casos, una vez que elegimos el tipo de informe, obtendremos la siguiente ventana en la que seleccionamos entre otros:
+
+Ventana de Visual Paradigm de nombre "Generate HTML", dividida en una serie de pestañas de las que aparece Content. A continuación se ven el dato Tempalte: Default y un conjunto de botones. Debajo aparece el mensaje Output Path y un espacio para escribir vacío. Debajo se ven tres ventana enmarcadas por una linea gris con el nombre Diagramas. En la ventana de la izquierda aparece una estructura jerárquica con los diagramas que se pueden documentar, aparecen marcadas las opciones Diagramas UML, Diagramas de clases (1) y FPDist. En la ventana de en medio, que está en blanco, aparece el nombre FPDist. Y en la derecha, de color gris la palabra Preview. 
+Qué diagramas queremos que intervengan y donde se almacenará el informe.
+La pestaña opciones (Options) permite configurar los elementos que se añadirán al informe, como tablas de contenidos, títulos, etc.
+Las propiedades de la página.
+Si se va a añadir una marca de agua.
+El resultado es un archivo (.html, .pdf o .doc) en el directorio de salida que hayamos indicado con la documentación de los diagramas seleccionados.
+
+2.3.2.- UMLet.
+Para los diagramas UML que se van a realizar a lo largo del curso se va a usar la herramienta UMLet. Algunas de sus características son:
+
+Es un software gratuito.
+Es multiplataforma.
+Incluye un módulo para integrarse con Eclipse.
+Dispone de la versión web UMLetino http://www.umletino.com/umletino.html, que no precisa instalación.
+La instalación de UMLet como herramienta de escritorio es muy sencilla:
+
+Descargar UMLet standalone del sitio oficial de descargas https://www.umlet.com/changes.htm , actualmente se encuentra en versión 14.3. El fichero descargado es umlet-standalone-14.3.0.zip. 
+Descomprimir el fichero, el paquete proporciona un conjunto de ficheros bajo el directorio uml con ejecutables para diferentes plataformas. En particular, usaremos el archivo comprimido Java umlet.jar para lanzarlo desde nuestro entorno de trabajo.
+Captura de pantalla que muestra el conjunto de pantallas que se obtienen de descomprimir el fichero UMLet.
+
+Podemos copiar la carpeta descomprimida en alguna ruta del sistema de archivos.
+
+Utilizando UMLet dibujaremos diferentes diagramas a lo largo de este tema y del siguiente.
+
+Nota: Si tienes problemas para ejecutar UMLet no dudes en utilizar UMLetino.
+
+
+En el  Anexo II se va hacer una breve explicación de las diversas posibilidades que ofrece UMLet. 
+
+2.4.- Ingeniería inversa.
+Caso práctico
+Mujer de mediana edad vista de frente, se ve de cintura para arriba, sonriente, es morena con flequillo y lleva el pelo recogido.Ada está muy satisfecha con el cambio que percibe en su equipo, ahora, cuando tiene que enfrentarse a un proyecto nuevo se esfuerzan en escribir los requerimientos antes y comenzar con un proceso de análisis y creación de un diagrama de clases. No obstante, ahora le surge un reto nuevo, una empresa les ha contratado para reconstruir una aplicación que hay que adaptar a nuevas necesidades. Así que los chicos continúan investigando si pueden aplicar el uso de diagramas en este caso también.
+La ingeniería inversa se define como el proceso de analizar código, documentación y comportamiento de una aplicación para identificar sus componentes actuales y sus dependencias y para extraer y crear una abstracción del sistema e información del diseño. El sistema en estudio no es alterado, sino que se produce un conocimiento adicional del mismo.
+
+Tiene como caso particular la reingeniería que es el proceso de extraer el código fuente de un archivo ejecutable.
+
+La ingeniería inversa puede ser de varios tipos:
+
+Ingeniería inversa de datos: Se aplica sobre algún código de bases datos (aplicación, código SQL, etc.) para obtener los modelos relacionales o sobre el modelo relacional para obtener el diagrama entidad-relación.
+Ingeniería inversa de lógica o de proceso: Cuando la ingeniería inversa se aplica sobre el código de un programa para averiguar su lógica (reingeniería), o sobre cualquier documento de diseño para obtener documentos de análisis o de requisitos.
+Ingeniería inversa de interfaces de usuario: consiste en estudiar la lógica interna de las interfaces para obtener los modelos y especificaciones que sirvieron para su construcción, con objeto de tomarlas como punto de partida en procesos de ingeniería directa que permitan su actualización.
+Ejercicio Propuesto
+Parte de un proyecto en Java que tengas ya hecho y obtén el el diagrama de clases correspondiente.
+
+
+Para saber más
+Tienes una buena descripción teórica sobre ingeniería inversa en el siguiente documento:
+
+Ingeniería Inversa. (0.53 MB)
+3.- Diagrama de clases
+Caso práctico
+Primer plano de una chica joven, de expresión seria, con el pelo largo y rizado, viste con una camisa de color gris.
+
+En la empresa ya han instalado Visual Paradigm, Juan y María están empezando a investigar su funcionamiento, y como utilizarlo desde un proyecto de NetBeans.
+
+—Empecemos por los diagramas estructurales, entre ellos el más importante es el diagrama de clases, fíjate, representa la estructura estática del sistema y las relaciones entre las clases.
+
+El diagrama de clases puede considerarse el más importante de todos los existentes en UML, encuadrado dentro de los diagramas estructurales, representa los elementos estáticos del sistema, sus atributos y comportamientos, y como se relacionan entre ellos.  Contiene las clases del dominio del problema, y a partir de éste se obtendrán las clases que formarán después el programa informático que dará solución al problema.
+
+En un diagrama de clases podemos encontrar los siguientes elementos:
+
+Clases: agrupan conjuntos de objetos con características comunes, que llamaremos atributos, y su comportamiento, que serán métodos. Los atributos y métodos tendrán una visibilidad que determinará quién puede acceder al atributo o método. Por ejemplo, una clase puede representar a un coche, sus atributos serán la cilindrada, la potencia y la velocidad, y tendrá dos métodos, uno para acelerar, que subirá la velocidad, y otro para frenar que la bajará.
+Relaciones: en el diagrama se representan relaciones reales entre los elementos del sistema a los que hacen referencia las clases. Pueden ser de asociación, agregación, composición y generalización. Por ejemplo, si tenemos las clases persona y coche, se puede establecer la relación conduce entre ambas. O una clase alumno puede tener una relación de generalización respecto a la clase persona.
+Notas: se representan como un cuadro donde podemos escribir comentarios que ayuden al entendimiento del diagrama.
+Elementos de agrupación: Se utilizan cuando hay que modelar un sistema grande, entonces las clases y sus relaciones se agrupan en paquetes, que a su vez se relacionan entre sí.
+
+
+Ejercicio Propuesto
+Crear un diagrama de clases nuevo en Visual Paradigm UML que incluya su nombre y su descripción.
+
+3.1.- Creación de clases.
+Imagen de una clase genérica. Aparece un rectángulo de color azul divido en tres bandas horizontales, en la banda superior aparece el texto “Nombre clase”, en la central aparece el texto “-lista de atributos” y en la inferior el texto “+lista de métodos()”.Una clase se representa en el diagrama como un rectángulo divido en tres filas: arriba aparece el nombre de la clase, a continuación los atributos con su visibilidad y después los métodos con su visibilidad.
+
+Citas para pensar
+"Una clase es una descripción de un conjunto de objetos que manifiestan los mismos atributos, operaciones, relaciones y la misma semántica."
+
+(Object Modelling and Design [Rumbaught et al., 1991])
+"Una clase es un conjunto de objetos que comparten una estructura y un comportamiento comunes."
+
+[Booch G., 1994]
+Ejercicio Propuesto
+Crear una clase nueva en el diagrama de clases del punto anterior.
+
+Autoevaluación
+Al crear una clase es obligatorio definir nombre, atributos y métodos. ¿Verdadero o falso?
+
+Verdadero.
+
+Falso.
+3.2.- Atributos.
+Forman la parte estática de la clase. Son un conjunto de variables para las que es preciso definir:
+
+Su nombre.
+Su tipo, puede ser un tipo simple, que coincidirá con el tipo de dato que se seleccione en el lenguaje de programación final a usar, o compuesto, pudiendo incluir otra clase.
+Además se pueden indicar otros datos como un valor inicial o su visibilidad. La visibilidad de un atributo se puede definir como:
+
+Público (+): Se pueden acceder desde cualquier clase y cualquier parte del programa.
+Privado(-): Sólo se pueden acceder desde operaciones de la clase.
+Protegido(#): Sólo se pueden acceder desde operaciones de la clase o de clases derivadas en cualquier nivel.
+Paquete(~): se puede acceder desde las operaciones de las clases que pertenecen al mismo paquete que la clase que estamos definiendo. Se usa cuando el lenguaje de implementación tiene esta característica como es el caso de Java.
+Ejercicio Propuesto
+Crear una clase de nombre "Módulo" y que tenga tres atributos:
+
+Nombre, de tipo string.
+Duración de tipo Int.
+Contenidos de tipo string.
+
+Autoevaluación
+¿Cómo sabemos que los atributos tienen visibilidad privada en el diagrama?
+
+Porque aparecen acompañados del símbolo más “+”.
+
+Porque aparecen acompañados del símbolo almohadilla “#”.
+
+Porque aparecen acompañados del símbolo “~”.
+
+Porque aparece acompañado del símbolo menos “-”.
+3.3.- Métodos.
+Representan la funcionalidad de la clase, es decir, qué puede hacer. Para definir un método hay que indicar como mínimo su nombre, parámetros, el tipo que devuelve y su visibilidad (similar a la de los atributos). También se debe incluir una descripción del método que aparecerá en la documentación que se genere del proyecto.
+
+Existe dos métodos particulares:
+
+El constructor de la clase, que tiene como característica que no devuelve ningún valor. El constructor tiene el mismo nombre de la clase y se usa para ejecutar las acciones necesarias cuando se instancia un nuevo objeto.
+El destructor de la clase. Cuando no se vaya a utilizar más el objeto, se podrá utilizar un método destructor que libere los recursos del sistema que tenía asignados. La destrucción del objetos es tratada de formas diferentes en función del lenguaje de programación que se esté utilizando.
+Ejercicio Propuesto
+Añadir a la clase creada anteriormente los métodos:
+
+matricular(alumno : Alumno) : void
+asignarDuración(duracion : int) : void
+
+Autoevaluación
+¿Cuál es el método que no devuelve ningún tipo de dato?
+
+El constructor.
+
+Todos los métodos devuelven algo, aunque sea void.
+
+~<nombre_clase>.
+3.4.- Relaciones entre clases.
+Caso práctico
+Primer plano de un hombre joven, de frente, de pelo corto y moreno, con expresión seria, camisa de rayas azules.
+—Es fácil, ¿lo ves?, por ejemplo, para la aplicación de venta por Internet, tendríamos como clases socio, pedido o artículo, los socios se caracterizan por sus datos personales, los pedidos por su número, fecha, o localidad de destino y los artículos por el código o su descripción.
+
+—Si eso lo veo claro, pero, ¿cómo lo ponemos todo junto? ¿Cómo se conecta el socio con el pedido y el artículo?
+
+Una relación es una conexión entre dos clases que incluimos en el diagrama.
+
+Se representan como una línea continua. Los mensajes "navegan" por las relaciones entre clases, es decir, los mensajes se envían entre objetos de clases relacionadas, normalmente en ambas direcciones, aunque a veces la definición del problema hace necesario que se navegue en una sola dirección, entonces la línea finaliza en punta de flecha.
+
+La relaciones se caracterizan por su cardinalidad, que representa cuantos objetos de una clase se pueden involucrar en la relación
+
+
+Ejercicio Propuesto
+Crea una clase nueva llamada Alumno y establece una relación de asociación con el nombre “matrícula” entre ésta y la clase Módulo.
+
+Clase de nombre Persona, con tres atributos que son nombre: cadena, edad: entero y dirección. De la clase parten dos líneas que vuelve sobre sí mismas para apuntar a la misma clase. La primera está rotulada con el nombre “casado con”, en un extremo lleva la etiqueta “marido” y los valores 0..1 y en el otro extremo lleva la etiqueta “mujer” y los valores 0..1. la otra línea está rotulada con el nombre “Emplea” y en un extremo lleva la etiqueta “Jefe” junto con el valor 1 y en el otro extremo la etiqueta “Empleado” con los valores 0..*.
+Es posible establecer relaciones unarias de una clase consigo misma. En el ejemplo se ha rellenado en la especificación de la relación los roles y la multiplicidad.
+
+Otros tipos de relaciones que se verán más adelante son:
+
+De herencia.
+De composición.
+De agregación.
+Autoevaluación
+Para obtener las relaciones de un diagrama nos basamos en la descripción de los requisitos del dominio, pero, ¿se pueden crear relaciones en el diagrama que no aparezcan especificadas en la lista de requisitos del problema?
+
+No se puede, las relaciones se deben extraer de la descripción del problema, si no lo hiciéramos así nos estaríamos inventando información.
+
+Sí se puede, a veces se infiere información o se conocen cosas del problema que no aparecen en la descripción de los requisitos.
+3.4.1.- Cardinalidad o multiplicidad de la relación
+Un concepto muy importante es la cardinalidad de una relación, representa cuantos objetos de una clase se van a relacionar con objetos de otra clase. En una relación hay dos cardinalidades, una para cada extremo de la relación y pueden tener los siguientes valores:
+
+Significado de las cardinalidades.
+Cardinalidad	Significado
+1	Uno y sólo uno
+0..1	Cero o uno
+N..M	Desde N hasta M
+*	Cero o varios
+0..*	Cero o varios
+1..*	Uno o varios (al menos uno)
+Por ejemplo, si tengo la siguiente relación:
+
+Dos clases formadas por rectángulos azules una de nombre “Alumno” y otra “Módulo” unidas por una línea recta y horizontal etiquetada con “matricula”, en el extremo junto a la clase “Alumno” aparecen los valores 0..* y junto al extremo de “Módulo” aparece 1..*.
+quiere decir que la clase Alumno se relaciona con la clase Módulo debido a que los alumnos se matriculan en diferentes módulos y en un módulo puede estar matriculado alumnos. La cardinalidad indicada quiere decir que todo alumno está matriculado en al menos un módulo y puede estar matriculado en varios y que en un módulo puede haber varios alumnos matriculados y puede ser que en un módulo no haya nadie matriculado.
+
+O esta otra:
+
+Dos clases formadas por rectángulos azules una de nombre “Módulo” y otra “Profesor” unidas por una línea recta y horizontal etiquetada con “imparte”, en el extremo junto a la clase “Módulo” aparecen los valores 1..* y junto al extremo de “Profesor” aparece 1.
+quiere decir que la clase Profesor relaciona con la clase Módulo debido a que los profesores imparten diferentes módulos y un módulo es impartido por un profesor. La cardinalidad indicada quiere decir que todo profesor imparte al menos un módulo pudiendo impartir varios y,  todo módulo es impartido por un profesor y sólo uno.
+
+Ejercicio Propuesto
+Establece la cardinalidad de la relación que has creado en el punto anterior para indicar que un alumno debe estar matriculado en al menos un módulo, o varios y que para cada módulo se puede tener ningún alumno, uno o varios.
+
+
+Y este ejemplo:
+
+Dos clases formadas por rectángulos, uno azul y otro blanco. Encima del rectángulo blanco aparece la frase “casado con”, debajo “mujer 0..1” y a su derecha “0..1 marido”. El rectángulo azul se encuentra encima de la esquina inferior derecha del cuadrado blanco y se divide en 3 zonas iguales. En la de arriba pone Persona y en la del medio pone “nombre: string” y “edad:int”. La de abajo está vacía.
+
+Indica que una persona se relaciona con otra persona por la relación "casado con". La cardinalidad indica que una mujer puede estar soltera o casada con una persona  y los maridos igual.
+
+3.4.2.- Relación de herencia (Generalización)
+La herencia es una propiedad que permite a los objetos ser construidos a partir de otros objetos, es decir, la capacidad de un objeto para utilizar estructuras de datos y métodos presentes en sus antepasados. También recibe el nombre de generalización
+
+El objetivo principal de la herencia es la reutilización, poder utilizar código desarrollado con anterioridad. La herencia supone una clase base y una jerarquía de clases que contiene las clases derivadas. Las clases derivadas pueden heredar el código y los datos de su clase base, añadiendo su propio código especial y datos, incluso cambiar aquellos elementos de la clase base que necesitan ser diferentes, es por esto que los atributos, métodos y relaciones de una clase se muestran en el nivel más alto de la jerarquía en el que son aplicables.
+
+Tipos:
+
+Herencia simple: Una clase puede tener sólo un ascendente. Es decir una subclase puede heredar datos y métodos de una única clase base.
+Herencia múltiple: Una clase puede tener más de un ascendente inmediato, adquirir datos y métodos de más de una clase.
+Representación:
+
+En el diagrama de clases se representa como una asociación en la que el extremo de la clase base tiene un triángulo.
+
+
+
+Ejercicio Propuesto
+Tres clases unidas entre si por dos relaciones de asociación. Las clases se forman con rectángulos azules divididos en dos franjas horizontales, en la superior aparece el nombre y en la inferior los atributos. En orden de izquierda a derecha son: Alumno que tiene como atributos Nombre: string, FechaNacimiento: Date, y correoElectronico: string. La segunda clase es Módulo, sin atributos. La tercera clase es Profesor, con los atributos Nombre: string, FechaNacimeinto: Date, y correoElectronico: string. Alumno se relaciona con Módulo a través de una línea recta horizontal etiquetada con Matrícula, en el extremo de la clase Alumno aparecen los valores 0..1 y en el extremo de Módulo los valores 1..*. La clase Módulo se relaciona con Profesor mediante un línea recta horizontal etiquetada con Imparte, en el extremo junto a Módulo aparecen los valores 1..* y junto a Profesor 1. 
+En nuestro diagrama tenemos Alumnos y Profesores. Aún no hemos hablado de su definición y estructura, pero en nuestro sistema tanto un alumno como un profesor tienen unas características comunes como el nombre, la fecha de nacimiento o el correo electrónico por el hecho de ser personas:
+
+Transforma este diagrama para hacer uso de la herencia añadiendo una clase "Persona".
+
+
+Autoevaluación
+He creado una clase persona cuyos atributo son Nombre, fechaContratación y numeroCuenta. De esta clase derivan por herencia la clase Empleado y JefeDepartamento. ¿Cómo debe declararse un método en la clase Persona que se llame CalculaAntigüedad que se usa sólo para calcular el sueldo de los empleados y jefes de departamento?
+
+Público.
+
+Privada.
+
+Protegida.
+
+Paquete.
+3.4.3.- Agregación y composición.
+Muchas veces una determinada entidad existe como un conjunto de otras entidades. En este tipo de relaciones un objeto componente se integra en un objeto compuesto. La orientación a objetos recoge este tipo de relaciones como dos conceptos: la agregación y la composición.
+La agregación es una asociación binaria que representa una relación todo-parte (pertenece a, tiene un, es parte de). Los elementos parte pueden existir sin el elemento contenedor y no son propiedad suya. Por ejemplo, un centro comercial tiene clientes o un equipo tiene unos miembros. El tiempo de vida de los objetos no tiene porqué coincidir.
+Conjuntos de clases unidas por relaciones de agregación. Las clases se representan como rectángulos azules. En la zona superior aparece la clase “Ordenador”, de la que sale en su zona inferior un rombo de color blanco, del rombo parten cuatro lineas hacia las clases “Monitor”, “Caja”, “Ratón” y”Teclado” que aparecen alineadas horizontalmente debajo de “Ordenador”. De la clase “Caja” también sale un rombo de color blanco en su zona inferior que se conecta mediante lineas rectas con las clases “Chasis”, “CPU”, “RAM” y “Ventilador”, que aparecen alineadas horizontalmente debajo de las otras.
+En el siguiente caso, tenemos un ordenador que se compone de piezas sueltas que pueden ser sustituidas y que tienen entidad por si mismas, por lo que se representa mediante relaciones de agregación. Utilizamos la agregación porque es posible que una caja, ratón o teclado o una memoria RAM existan con independencia de que pertenezcan a un ordenador o no.
+
+La composición es una agregación fuerte en la que una instancia ‘parte’ está relacionada, como máximo, con una instancia ‘todo’ en un momento dado, de forma que cuando un objeto ‘todo’ es eliminado, también son eliminados sus objetos ‘parte’. Por ejemplo: un rectángulo tiene cuatro vértices, un centro comercial está organizado mediante un conjunto de secciones de venta...
+Tres clases unidas por relaciones de agregación. Las clases se representan como rectángulos de color azul, con su nombre en la zona superior. De izquierda a derecha las clases se llaman “Modulo”, “Competencia” y “Ciclo”. De “Módulo” a “Competencia” surge una linea recta que termina en un rombo de color negro. Está etiquetada con “Compuesto por”, y lleva en el extremo de “Módulo” los valores 1..* y en el extremo del rombo un 1. De “Competencia” a “Ciclo” surge un línea que termina en un rombo. En el extremo de “Competencia” aparecen los valores 1..* y en el rombo un 1.
+Para modelar la estructura de un ciclo formativo vamos a usar las clases Módulo, Competencia y Ciclo que representan lo que se puede estudiar en Formación Profesional y su estructura lógica. Un ciclo formativo se compone de una serie de competencias que se le acreditan cuando supera uno o varios módulos formativos.
+
+Dado que si eliminamos el ciclo, las competencias no tienen sentido, y lo mismo ocurre con los módulos hemos usado relaciones de composición. Si los módulos o competencias pudieran seguir existiendo sin su contenedor habríamos utilizado relaciones de agregación.
+
+Estas relaciones se representan con un rombo en el extremo de la entidad contenedora. En el caso de la agregación es de color blanco y para la composición negro. Como en toda relación hay que indicar la cardinalidad.
+
+3.4.4.- Atributos de enlace.
+Es posible que tengamos alguna relación en la que sea necesario añadir algún tipo de información que la complete de alguna manera. Cuando esto ocurre podemos añadir atributos a la relación.
+
+Ejercicio Propuesto
+Cuando un alumno se matricula de un módulo es preciso especificar el curso al que pertenece la matrícula, las notas obtenidas en el examen y la tarea y la calificación final obtenida. Estas características no pertenecen totalmente al alumno ni al módulo sino a la relación específica que se crea entre ellos, que además será diferente si cambia el alumno o el módulo. Añade estos atributos al enlace entre Alumno y Módulo.
+
+
+Autoevaluación
+Siguiendo con el ejemplo anterior, para modelar el cálculo de la nota media de un alumno se añade el método calcularNotaMedia a la clase Alumno que realiza la media de las calificaciones de los módulos en los que el alumno se encuentra matriculado para este curso. ¿Qué visibilidad se debería poner a este método?
+
+
+Público.
+
+Privado.
+
+Protegido.
+
+Paquete.
+3.4.5.- Restricciones
+En ocasiones la relación entre dos clases está condicionada al cumplimiento de algún requisito, o un parámetro de una clase tiene un valor constante ...
+
+Cuando se precisa reflejar una condición que aparece en el enunciado y no disponemos de una notación particular para que quede reflejada en el diagrama de clases, es posible mostrarla mediante una restricción.
+
+Las restricciones se incluyen mediante una descripción textual encerrada entre llaves.
+
+Ejemplo-1. Supongamos un ejercicio donde el socio de un club de fútbol desea acceder al palco del estadio. Si esta posibilidad sólo está disponible para antiguos jugadores del equipo, junto a la línea que relaciona las clases socio y palco, se puede incluir la restricción {sólo para ex-jugadores}.
+
+Ejemplo-2. Supongamos que la clase producto de un establecimiento tiene un IVA fijo del 21%, sea cual sea el tipo de producto que pone a la venta. Dado que este valor es fijo, podría considerarse una constante. En el diagrama de clases podría indicarse con una restricción del tipo {IVA constante 21%}.
+
+3.5.- Pautas para crear diagramas de clase.
+Caso práctico
+Primer plano de una chica joven, de expresión seria, con el pelo largo y rizado, viste con una camisa de color gris.María y Juan siguen comentando la creación de diagramas de clases.
+
+—Las reservas se utilizan para relacionar los clientes y las habitaciones, eso es sencillo de ver, pero si tenemos un enunciado un poco más largo, puede no ser tan obvio. Quizá podrías darme algún consejo sobre cómo pasar de los requisitos iniciales de una aplicación a un primer diagrama de clases.
+
+—Es verdad, la cosa se complica un poco cuando tenemos más requisitos, pero la clave está en analizar el texto para obtener nombres y continuar el desarrollo a partir de ahí.
+
+A la hora de crear diagramas de clases, la clave está en hacer una buena elección de las clases que sugiere el problema.
+
+Para identificar las clases candidatas a formar parte del diagrama, es recomendable subrayar cada nombre o sintagma nominal que aparece en el enunciado.
+
+Cuando tengamos la lista completa habrá que estudiar cada clase potencial para ver si, finalmente, es incluida en el diagrama. Para ayudarnos a decidir, podemos utilizar los siguientes criterios:
+
+La información de la clase es necesaria para que el sistema funcione.
+La clase posee un conjunto de atributos que podemos encontrar en cualquier ocurrencia de sus objetos. Si sólo aparece un atributo normalmente se rechazará y será añadido como atributo de otra clase.
+La clase tiene un conjunto de operaciones identificables que pueden cambiar el valor de sus atributos y son comunes en cualquiera de sus objetos.
+Es una entidad externa que consume o produce información esencial para la producción de cualquier solución en el sistema.
+La clase se considera si cumple todos (o casi todos) los criterios.
+
+Se debe tener en cuenta que la lista no incluye todo, habrá que añadir objetos adicionales para completar el modelo y también, que diferentes descripciones del problema pueden provocar la toma de diferentes decisiones de creación de objetos y atributos.
+3.5.1.- Obtención de atributos y operaciones.
+Imagen de un chico joven con camisa de color marrón de espaldas tecleando ante la pantalla de un ordenador.Atributos
+
+Definen al objeto en el contexto del sistema, es decir, el mismo objeto en sistemas diferentes tendría diferentes atributos, por lo que debemos buscar en el enunciado o en nuestro propio conocimiento, características que tengan sentido para el objeto en el contexto que se analiza. Deben contestar a la pregunta "¿Qué elementos (compuestos y/o simples) definen completamente al objeto en el contexto del problema actual?"
+
+Operaciones
+
+Describen el comportamiento del objeto y modifican sus características de alguna de estas formas:
+
+Manipulan los datos.
+Realizan algún cálculo.
+Monitorizan un objeto frente a la ocurrencia de un suceso de control.
+Se obtienen analizando verbos en el enunciado del problema.
+
+Relaciones
+
+Por último habrá que estudiar de nuevo el enunciado para obtener cómo los objetos que finalmente hemos descrito se relacionan entre sí. Para facilitar el trabajo podemos buscar mensajes que se pasen entre objetos y las relaciones de composición y agregación. Las relaciones de herencia se suelen encontrar al comparar objetos semejantes entre sí, y constatar que tengan atributos y métodos comunes.
+
+Cuando se ha realizado este procedimiento no está todo el trabajo hecho, es necesario revisar el diagrama obtenido y ver si todo cumple con las especificaciones. No obstante siempre se puede refinar el diagrama completando aspectos del ámbito del problema que no aparezcan en la descripción recurriendo a entrevistas con los clientes o a nuestros conocimientos de la materia.
+
+3.6.- Generación de código a partir del diagrama de clases.
+Caso práctico
+Primer plano de una chica joven, de expresión seria, con el pelo largo y rizado, viste con una camisa de color gris.—Bueno, ya tenemos el diagrama, es cierto que es bastante útil para aclarar ideas en el equipo y establecer un plan de trabajo inicial. Además es más fácil empezar a programar porque ya tenemos la línea a seguir, ahora solo falta que empecemos a crear clases y a rellenarlas, ¿Verdad?
+
+—Pues sí, pero aún no lo sabes todo, el diagrama de clases aún te va a dar más facilidades...
+
+La Generación Automática de Código consiste en la creación utilizando herramientas CASE de código fuente de manera automatizada. El proceso pasa por establecer una correspondencia entre los elementos formales de los diagramas y las estructuras de un lenguaje de programación concreto. El diagrama de clases es un buen punto de partida porque permite una traducción bastante directa de las clases representadas gráficamente, a clases escritas en un lenguaje de programación específico como Java o C++.
+
+Normalmente las herramientas de generación de diagramas UML incluyen la facilidad de la generación, o actualización automática de código fuente, a partir de los diagramas creados.
+
+Utilizando el SDE integrado de VP-UML en NetBeans:
+
+
+
+Antes de hacerlo tendremos que abrir el modelo desde NetBeans, usando el SDE, crear un proyecto nuevo e importar el proyecto VP-UML que hemos creado.
+
+Se puede hacer de dos formas:
+
+Sincronizar con el código: El código fuente eliminado no se recuperará. Solo se actualizará el código existente.
+Forzar sincronizado a código: Se actualizará todo el código que pueda partir del modelo, incluido el de código eliminado del proyecto NetBeans.
+Para generar todas las clases y paquetes de un proyecto VP-UML en NetBeans abrimos el proyecto CE-NB y desplegamos el menú contextual y seleccionamos Update Project to Code. También existe la posibilidad de hacerlo directamente desde una clase en particular.
+
+Si se produce algún problema se muestra en la ventana de mensajes, una vez corregido se vuelve a actualizar.
+
+Este procedimiento produce los archivos .java necesarios para implementar las clases del diagrama.
+
+Desde VP-UML
+
+Para generar el código java de un diagrama de clases, utilizamos el menú Herramientas >> Generación instantánea >> Java... Se muestra una ventana en la que podemos configurar el idioma, las clases a generar, y otras características básicas relacionadas con la nomenclatura de atributos y métodos. También permite seleccionar la forma en que se va a implementar la asociación de composición, en nuestro caso hemos elegido la opción por defecto que es a través de un vector.
+
+
+3.6.1.- Elección del lenguaje de programación. Orientaciones para el lenguaje java.
+Ventana de la aplicación Visual Paradigm que sirve para seleccionar el lenguaje de programación a utilizar en el paso a código de las clases. En la zona superior de la ventana se puede leer el siguiente texto: Lenguaje de programación: Cambiar el idioma de programación de este proyecto. Después de que se haya cambiado el lenguaje de programación, los nombres de los tipos de datos predefinidos serán cambiados para que coincidan con el idioma. A continuación aparece la palabra idioma seguida de un selector en el que aparece la palabra Java. Debajo hay una tabla con los siguientes datos: Cabecera: Tipo de datos y Nombre. Valores: boolean y boolean, en la siguiente fila byte y byte, en la siguiente fila char y char, en la siguiente fila double y double, en la siguiente fila  float y float, en la siguiente fila, int e int, en la siguiente fila  long y long, en la siguiente fila short y short, en la siguiente fila  string y String, en la siguiente fila void y void. A continuación aparecen botones para Añadir, Borrar, OK y Cancelar. 
+El lenguaje final de implementación de la aplicación influyen en algunas decisiones a tomar cuando estamos creando el diagrama ya que el proceso de traducción es inmediato. Si existe algún problema en los nombres de clases, atributos o tipos de datos porque no puedan ser utilizados en el lenguaje final o no existan la generación dará un fallo y no se realizará. Por ejemplo, si queremos utilizar la herramienta de generación de código tendremos que asegurarnos de utilizar tipos de datos simples apropiados, es decir, si usamos Java el tipo de dato para las cadenas de caracteres será String en lugar de string o char*.
+
+Podemos definir el lenguaje de programación final desde el menú Herramientas >> Configurar lenguaje de programación. Si seleccionamos Java automáticamente cambiará los nombres de los tipos de datos al lenguaje escogido.
+
+Anexo I.- Descarga e instalación de Visual Paradigm.
+Descarga e instalación de Visual Paradigm
+
+Obtenemos los archivos desde:
+
+Página de Visual Paradigm
+
+Ofrece dos versiones:
+
+Visual Paradigm for UML (VP-UML), versión de prueba de 10 días, ampliable a 30 días mediante registro.
+Versión Community-Edition, para uso no comercial (gratuito).
+En cualquier caso necesitamos un código de activación que conseguiremos registrándonos. Se envía al correo electrónico que se indique en el registro.
+
+La versión Community-Edition incluye algunas de las funcionalidades de la versión completa, entre las que no se encuentra la generación de código ni la ingeniería inversa, que se verán al final de la unidad por lo que se recomienda empezar por la versión completa de prueba por 30 días, para los que se necesita un código de tipo, conseguiremos el código de activación, que es un archivo de tipo zvpl, en este caso llamado vpsuite.zvpl.
+
+Para la siguiente unidad también usaremos VP-UML, de modo que si fuera necesario tendríamos que conseguir un nuevo código de activación, esta vez de tipo Community-Edition.
+
+Proceso de instalación
+
+Ejecutaremos el archivo de instalación, que tendrá diferente extensión si es para Windows o para Linux. En nuestro caso suponemos que lo hacemos en un equipo con Ubuntu Desktop 10.10. Se debe tener en cuenta que en el nombre se incluye la versión y la fecha en la que apareció, por lo que estos datos pueden cambiar con el tiempo. Si hacemos la instalación en Windows bastará con hacer doble clic sobre el archivo .exe.
+
+usuario@equipo:~/VP/ chmod +x VP_Suite_Linux_5_2_20110611.sh
+usuario@equipo:~/VP/sudo  ./VP_Suite_Linux_5_2_20110611.sh
+Durante la instalación tendremos que indicar qué módulos queremos instalar, seleccionaremos Visual Paradigm for UML y el SDE (Smart Development Environment o Entorno de Desarrollo Inteligente), de NetBeans que es el que vamos a usar.
+
+Ventana de la instalación de Visual Paradigm, en concreto la que muestra la casilla de verificación para indicar que se debe instalar Visual Paradigm for UML 8.2. aparece el mensaje: Visual Paradigm form Uml 8.2  con su icono, y debajo: VP-UML is a UML CASE tool suporting full software development life-cycle, VP-UML features the latest Uml notations, report writer, round-trip engineering, integration wit all leading Java IDEs and much more. A continuación un cuadrado de color naranja con una marca de aceptación y el mensaje Visual Paradigm for UML 8.2 Debajo el mensaje Smart Development Environment junto con su icono y el siguiente texto: Smart Development Environment (SDE) is a modeling environment that inherits all the powerful features from VP-UML and integrated with your favourites IDEs seamlessly. Thus, SDE speeds up the entire model-code-deploy software development process. Debajo aparece un cuadro blanco seguido del texto SDE for Eclipse (SDE-EC).
+Ventana de la instalación de Visual Paradigm, en concreto la que muestra la casilla de verificación para indicar que se debe instalar el SDE para NetBeans en la que se puede leer: Smart Development Environment junto con su icono y el siguiente texto: Smart Development Environment (SDE) is a modeling environment that inherits all the powerful features from VP-UML and integrated with your favourites IDEs seamlessly. Thus, SDE speeds up the entire model-code-deploy software development process. Debajo aparece un cuadro blanco seguido del texto SDE for Eclipse (SDE-EC). Debajo otro cuadro blanco seguido del texto SDE for IntelliJ IDEA (SDE-IJ). Y un último un cuadro de color naranja marcado  seguido del texto SDE for NetBeans (SDE-NB).
+A continuación tendremos que indicar que vamos a utilizar la versión Enterprise de ambas herramientas y en que directorio está NetBeans:
+
+Es importante destacar que la instalación debe hacerse sobre una instalación limpia de NetBeans, es decir, que solo podremos instalarlo en el directorio que indicamos una vez.
+
+A continuación se pide un archivo con la licencia de la herramienta. Al iniciar la descarga nos pedirá que nos registremos, tras hacerlo podremos solicitar este archivo. Lo insertamos ahora, como hemos instalado dos herramientas nos pedirá dos archivos, pero podemos usar la opción de archivo de licencia combinado, de modo que nos sirva para los dos casos. Si nos lo pide, tendremos que volver a añadirlo después al iniciar Visual Paradigm, con una copia nueva del archivo de clave.
+
+Por último indicamos dónde queremos que ponga los archivos con los proyectos y finalizamos la instalación indicando que no queremos que abra ninguna aplicación.
+
+Iniciar Visual Paradigm
+
+Una vez realizada la instalación tendremos una entrada en el menú Aplicaciones llamada Otras, si trabajamos con Linux o bien una entrada de menú en el botón Inicio para Visual Paradigm, si es que trabajamos en Windows. En cualquiera de los casos para abrir la herramienta buscamos la opción Visual Paradigm for UML, que se abrevia como VP-UML. Al hacer clic se abrirá el programa, y nos preguntará cual es el directorio por defecto para guardar los proyectos, podemos dejar la opción por defecto o seleccionar nuestro propio directorio.
+
+Iniciar VP-UML desde NetBeans
+
+Al hacer la instalación hemos indicado, marcado, que se instale también el SDE para NetBeans, por lo que también tenemos la opción de iniciar la herramienta para usarla integrada con NetBeans. Para abrirlo buscamos dentro del menú de Visual Paradigm la opción SDE for NetBeans.
+
+Esto abre la aplicación NetBeans, a la que se ha incorporado una pequeña diferencia, y es que podemos añadir a un proyecto en desarrollo existente un proyecto VP-UML. ¿Cómo lo hacemos?
+
+Estando en la ventana de Proyectos, si hacemos clic con el botón secundario sobre un proyecto vemos una serie de opciones, como compilar o construir, ahora, además, abrir el SDE desde Open SDE EE-NB, que abre el SDE. La primera vez nos pedirá que importemos un archivo de clave, que podremos obtener con el botón Request Key desde la página oficial. Para ello necesitaremos el correo de registro que hemos utilizado al hacer la instalación.
+
+Conjunto de menús contextuales de un proyecto NetBeans para seleccionar la opción de abrir el SDE para NetBeans de Visual Paradigm. En el menú principal aparece resaltada la opción Herramientas, de la que surge otro menú contextual con la opción SDE EE-NB resaltada, del que a su vez surge otro menú con la opción OpenSDE NB-EE resaltada.
+Los proyectos de Visual Paradigm se podrán almacenar en el directorio por defecto, que se denomina vpproject y cuelga del directorio principal del proyecto NetBeans, o en otra ubicación. Nosotros nos quedaremos con la opción por defecto.
+
+También podemos importar un proyecto VP-UML que tengamos ya creado seleccionándolo al crear el proyecto existente.
+
+Conjunto de menús contextuales de un proyecto NetBeans para seleccionar la opción de importar un proyecto de Visual Paradigm. En el menú principal aparece resaltada la opción Herramientas, de la que surge otro menú contextual con la opción SDE EE-NB resaltada, del que a su vez surge otro menú con la opción SDE EE-NB Project de la que sale el menú final con la opción Import SDE EE-NB Project.  
+ 
+
+Una vez creado o importado el proyecto, tendremos una serie de botones en la zona superior derecha que nos permitirán crear los diferentes diagramas de UML, y que queden asociados al proyecto NetBeans.
+
+ Pantalla del SDE para NetBeans de VP-UML. La pantalla aparece dividida en cinco zonas. Arriba aparece una hilera de iconos para seleccionar diferentes tipos de diagramas UML, en a zona inferior tenemos a la izquierda un panel para seleccionar elementos del proyecto VP, en la zona central aparece un diagrama de clases junto con el panel con los elementos que podemos añadir al diagrama. A la derecha aparece una vista previa del diagrama y en la zona inferior la ventana de mensajes.
+ 
+
+Anexo II.- Introducción a UMLet
+En este anexo se va hacer una breve explicación de las diversas posibilidades que ofrece UMLet. Para ello vamos a utilizar su versión en línea UMLetino disponible en la dirección http://www.umletino.com/umletino.html.
+
+a.- Pantalla principal.
+La primera pantalla a la que accedemos es:
+
+Captura de pantalla que muestra la primera ventana que observamos al acceder a UMLet.
+
+Se ven claramente diferenciadas cuatro zonas:
+
+zona izquierda con un menú que dispone de algunas opciones generales
+zona central donde se mostrará el diagrama que estemos diseñando
+zona superior derecha que muestra distintos símbolos de UML
+zona inferior derecha que será la zona de edición de las propiedades de cada elemento
+b.- Opciones.
+En la zona izquierda se visualizan las siguientes opciones:
+
+Keyinfo: muestra los atajos de teclado
+File Import: importa un proyecto UML en el formato propio de UMLet (.uxf)
+File Export: exporta un proyecto UML de tipo UMLet (.uxf)
+Import: importa un proyecto UML en el formato propio de UMLet (.uxf) desde Dropbox
+Export: exporta un proyecto UML de tipo UMLet (.uxf) a Dropbox
+Save: salva el proyecto en el sistema de almacenamiento persistente del propio navegador
+b.1.- Atajos de teclado.
+Si seleccionas la opción Keyinfo aparecerá la siguiente pantalla:
+
+Captura de pantalla que muestra los distintos atajos de teclado de los que disponemos en UMLet.
+
+b.2.- Importación de diagramas.
+Pulsando File Import se abre una ventana de selección de un fichero de extensión .uxf para cargarlo.
+
+Si el fichero se encuentra en Dropbox se debe utilizar la opción Import
+
+b.3.- Exportación de diagramas.
+Pulsando File Export se abre una ventana para guardar un fichero de extensión .uxf que almacena la información del diagrama.
+
+Captura de pantalla que muestra la ventana para guardar y exportar diagramas en UMLet.
+
+Podemos rellenar el nombre de fichero a guardar y elegir la opción Save Diagram File. La opción Save Image File únicamente guarda una imagen del diagrama.
+
+Si el fichero se encuentra en Dropbox se debe utilizar la opción Export.
+
+b.4.- Salvar diagramas.
+En la versión web disponemos de la posibilidad de almacenar el diagrama en el propio navegador. Para ello seleccionaremos la opción Save apareciendo la siguiente pantalla:
+
+Captura de pantalla que muestra la ventana para guardar diagramas desde la web en UMLet.
+
+Escribimos el nombre que demos al diagrama y veremos su aparición debajo de la opción Save.
+
+c.- Elementos del diagrama.
+En la zona superior derecha se pueden ver distintos símbolos propios de UML.
+
+Captura de pantalla que muestra los distintos símbolos propios en UMLet.
+
+Para utilizar cualquier elemento haremos doble clic sobre éste o lo arrastraremos a la zona central.
+
+En la parte superior aparece un menú desplegable para seleccionar distintos tipos de diagrama:
+
+Captura de pantalla que muestrael menú despegable para seleccionar distintos tipos de diagrama en UMLet.
+
+d.- El diagrama.
+En la zona central se muestra el diagrama que se está diseñando.
+
+Captura de pantalla que muestra el diagrama que se está diseñando en UMLet.
+
+Si pulsamos cualquiera de los elementos incluidos en el diagrama éste cambiará de color,
+
+Captura de pantalla que muestra el diagrama que se está diseñando, en el cual uno está pinchado y cambiado de color.
+
+y aparecerá su información en la zona inferior derecha.
+
+Captura de pantalla que muestra la información del diagrama que se está diseñando.
+
+e.- Edición de las propiedades.
+Al seleccionar cualquier elemento del diagrama sus propiedades aparecen en la ventana inferior derecha.
+
+Para saber las opciones disponibles dependiendo del elemento que estemos editando debemos teclear Ctrl+Barra de espacio.
+
+En el caso de una clase veremos las siguientes opciones:
+
+Captura de pantalla que muestra las propiedades de una clase en UMLet.
+
+En el caso de una relación:
+
+Captura de pantalla que muestra las propiedades de una relación en UMLet.
+
+Anexo III.- Generación del diagrama de clases de un problema dado.
+Descripción del problema
+
+El Ministerio de Educación ha encargado a BK Programación que desarrolle una plataforma de aprendizaje electrónico para que los alumnos de ciclos formativos a distancia tengan acceso a los materiales y puedan comunicarse con sus profesores. Para que los chicos puedan empezar a crear los primeros diagramas de la aplicación Ada les pasa la siguiente descripción del ámbito del problema:
+
+La aplicación tiene que gestionar la información de los alumnos y profesores. De todas estas personas nos interesa: nombre, dirección y teléfono.  Además, tanto los alumnos y profesores se identifican con un alias en el sistema y se comunican a través de correo electrónico.
+
+Cuando un alumno finaliza el ciclo se emite un certificado de competencias a su nombre donde aparece la descripción de las competencias que forman el ciclo y la nota media obtenida. Para los profesores, además, se debe conocer su número de registro personal (NRP).
+
+Interesa también gestionar la información de los módulos en los que se matriculan los alumnos en diferentes ciclos formativos a distancia. De cada módulo formativo nos interesa: nombre, número de horas (en el curso) y contenido.
+
+Interesa saber de los alumnos que están matriculados en cada módulo. En cada módulo habrá, al menos, un alumno matriculado. Y también queremos saber en qué módulos está matriculado un alumno. Puede ser que no esté matriculado en ningún módulo.
+
+También interesa saber cuales son de los módulos que imparte un profesor que pondrán los contenidos del módulo a disposición de los alumnos. Un profesor impartirá, al menos, un módulo y queremos tener información del profesor que imparte un módulo, el cual sólo puede ser impartido por un único profesor.
+
+La aplicación tiene que tener controlado la información de todos los ciclos formativos que se imparten. Nos interesa, de cada uno de ellos: su nombre, descripción (del módulo) y horas totales.
+
+De cada ciclo formativo interesa saber cuales son sus competencias profesionales. De cada competencia nos interesa una sola cosa: su descripción. Sabemos que un ciclo formativo está formado por una o varias competencias profesionales. Si un ciclo desaparece, desaparecen dichas competencias profesionales.
+
+ Interesa tener registrado los módulos que acompañan a cada competencia profesional. Cada competencia profesional tiene, al menos, un módulo. Un módulo pertenece a una única competencia profesional y si desaparece dicha competencia profesional, desaparece dicho módulo.
+
+Para superar un módulo hay que hacer una tarea y un examen que se calificarán de uno a diez, y sacar en ambos casos una puntuación superior a cinco. Por ello, queremos tener información, para cada módulo, de la tarea que conlleva este módulo. Cada módulo conlleva una única tarea. Una tarea pertenece a un único módulo y si desaparece el módulo, desaparece la tarea. De cada tarea nos interesa un único dato que es: su descripción.
+
+También, queremos tener registrado todos los exámenes, que se hacen para cada módulo. Cada examen pertenece a un único módulo y, para cada módulo, hay un único examen. Si el módulo desaparece, desaparece el examen.
+
+Y, hay una batería de preguntas que se usan para hacer los diferentes exámenes. Estas preguntas puede ser que no sean usadas en ningún examen o que sean usadas en varias. Y un examen siempre está formado por 30 preguntas. Si el examen desaparece, eso no implica la desaparición de ninguna pregunta. De cada pregunta nos interesa: enunciado, posibles respuestas y el número de la respuesta (qué es válida).
+
+ 
+
+ 
+
+a.- Extracción de los sustantivos de la descripción del problema.
+Primero subrayamos los sustantivos de la descripción del problema (sin repeticiones) y los pasamos a una tabla:  
+
+La aplicación tiene que gestionar la información de los alumnos y profesores. De todas estas personas nos interesa: nombre, dirección y  teléfono.  Además, tanto los alumnos y profesores se identifican con un alias en el sistema y se comunican a través de correo electrónico.
+
+Cuando un alumno finaliza el ciclo se emite un certificado de competencias a su nombre donde aparece la descripción de las competencias que forman el ciclo y la nota media obtenida. Para los profesores, además, se debe conocer su número de registro personal (NRP).
+
+Interesa también gestionar la información de los módulos en los que se matriculan los alumnos en diferentes ciclos formativos a distancia. De cada módulo formativo nos interesa: nombre, número de horas (en el curso) y contenido.
+
+Interesa saber de los alumnos que están matriculados en cada módulo. En cada módulo habrá, al menos, un alumno matriculado. Y también queremos saber en qué módulos está matriculado un alumno. Puede ser que no esté matriculado en ningún módulo.
+
+También interesa saber cuales son de los módulos que imparte un profesor que pondrán los contenidos del módulo a disposición de los alumnos. Un profesor impartirá, al menos, un módulo y queremos tener información del profesor que imparte un módulo, el cual sólo puede ser impartido por un único profesor.
+
+La aplicación tiene que tener controlado la información de todos los ciclos formativos que se imparten. Nos interesa, de cada uno de ellos: su nombre, descripción (del módulo) y horas totales.
+
+De cada ciclo formativo interesa saber cuales son sus competencias profesionales. De cada competencia nos interesa una sola cosa: su descripción. Sabemos que un ciclo formativo está formado por una o varias competencias profesionales. Si un ciclo desaparece, desaparecen dichas competencias profesionales.
+
+ Interesa tener registrado los módulos que acompañan a cada competencia profesional. Cada competencia profesional tiene, al menos, un módulo. Un módulo pertenece a una única competencia profesional y si desaparece dicha competencia profesional, desaparece dicho módulo.
+
+Para superar un módulo hay que hacer una tarea y un examen que se calificarán de uno a diez, y sacar en ambos casos una puntuación superior a cinco. Por ello, queremos tener información, para cada módulo, de la tarea que conlleva este módulo. Cada módulo conlleva una única tarea. Una tarea pertenece a un único módulo y si desaparece el módulo, desaparece la tarea. De cada tarea nos interesa un único dato que es: su descripción.
+
+También, queremos tener registrado todos los exámenes, que se hacen para cada módulo. Cada examen pertenece a un único módulo y, para cada módulo, hay un único examen. Si el módulo desaparece, desaparece el examen.
+
+Y, hay una batería de preguntas que se usan para hacer los diferentes exámenes. Estas preguntas puede ser que no sean usadas en ningún examen o que sean usadas en varias. Y un examen siempre está formado por 30 preguntas. Si el examen desaparece, eso no implica la desaparición de ninguna pregunta. De cada pregunta nos interesa: enunciado, posibles respuestas y el número de la respuesta (qué es válida).
+
+ 
+
+Tabla de sustantivos
+Clase/objeto potencial	Categoría
+Alumno	Entidad externa o rol
+Ciclo Formativo a Distancia	Unidad organizacional
+Modulo Formativo	Unidad organizacional
+Año	Atributo
+Profesor	Entidad externa o rol
+Contenidos	Atributo
+Tarea	Cosa
+Examen	Cosa
+Uno	Atributo
+Diez	Atributo
+Pregunta	Cosa
+Enunciado	Atributo
+Respuesta	Atributo
+Competencia Profesional	Unidad organizacional
+Descripción	Atributo
+Horas	Atributo
+Nombre	Atributo
+Nota media	Atributo
+Alias	Atributo
+Nombre	Atributo
+Dirección	Atributo
+Teléfono	Atributo
+Persona	Rol o entidad externa
+Contenidos	Atributo
+Número de registro personal	Atributo
+b.- Selección de sustantivos como objetos/clases del sistema.
+Ahora aplicamos los criterios de selección de objetos. En este apartado es necesario destacar que aunque algunos de los sustantivos que tenemos en el anunciado podrían llegar a convertirse en clases y objetos, como los contenidos de un módulo formativo, se descartan en esta fase porque el enunciado no da suficiente información. El proceso de creación de diagramas no es inmediato, sino que está sujeto a revisiones, cambios y adaptaciones hasta tener un resultado final completo.
+
+Cómo se indicó en el punto 3.5., estos son los criterios que hay que seguir para determinar si los sustantivos, que aparecen en el enunciado, son clases:
+
+La información de la clase es necesaria para que el sistema funcione.
+La clase posee un conjunto de atributos que podemos encontrar en cualquier ocurrencia de sus objetos. Si sólo aparece un atributo normalmente se rechazará y será añadido como atributo de otra clase.
+La clase tiene un conjunto de operaciones identificables que pueden cambiar el valor de sus atributos y son comunes en cualquiera de sus objetos.
+Es una entidad externa que consume o produce información esencial para la producción de cualquier solución en el sistema.
+La clase se considera si cumple todos (o casi todos) los criterios.
+
+Tabla de elección de sustantivos como objetos o clases del sistema.
+Clase/objeto potencial	Criterios aplicables
+Alumno	2,3,4
+Ciclo Formativo a Distancia	1,2,3
+Módulo Formativo	1,2,3
+Profesor	2,3,4
+Tarea	1,2,3
+Examen	1,2,3
+Competencia Profesional	1,2,3
+Pregunta	1,2,3
+Certificado de competencias	Falla 2,3 rechazado
+Sistema	Falla 1,2,3,4 rechazado
+Persona	2,3,4
+Obtención de los atributos de los objetos.
+
+Buscamos responder a la pregunta ¿Qué elementos (compuestos y/o simples) definen completamente al objeto en el contexto del problema actual?
+
+c.- Tabla de relación de las clases u objetos con sus atributos.
+Tabla de relación de las clases u objetos con sus atributos.
+Clase/objeto potencial	Atributos
+Alumno	Nombre, dirección, teléfono, alias, correo electrónico.
+Ciclo Formativo a Distancia	Nombre, descripción, horas.
+Módulo Formativo	Modulo Formativo
+Profesor	Nombre, dirección, teléfono, alias, correo electrónico , NRP.
+Tarea	Descripción, calificación.
+Examen	Descripción, calificación.
+Competencia Profesional	Nombre, descripción.
+Pregunta	Enunciado, respuestas, respuesta válida.
+Persona	Nombre, dirección, teléfono, alias, correo electrónico.
+d.- Obtención de los métodos.
+Buscamos o inferimos en el enunciado verbos, y actividades en general que describan el comportamiento de los objetos o modifiquen su estado.
+
+Tabla de clases u objetos del sistema con sus posibles métodos.
+Clase/objeto potencial	Métodos
+Alumno	
+CalcularNotaMedia() : void
+
+emitirCertificado() : void
+
+Ciclo Formativo a Distancia	 
+Módulo Formativo	
+Matricular(Alumno : alumno) : void
+
+asignarDuracion(horas: int) : void
+
+Profesor	 
+Tarea	 
+Examen	
+Calificar()
+
+añadirPregunta()
+
+ordenarPreguntas()
+
+crearExamen()
+
+Competencia Profesional	 
+Pregunta	 
+Persona	 
+e.- Obtener relaciones.
+Con las clases ya extraídas y parcialmente definidas (aún faltan por añadir métodos y atributos inferidos de posteriores refinamientos y de nuestro conocimiento) podemos empezar a construir relaciones entre ellas.
+
+Comenzaremos por las clases que hacen referencia a la estructura de los Ciclos, cada Ciclo se compone de una o más competencias profesionales, que no tienen la capacidad de existir por si mismas, es decir, la competencia no tiene sentido sin su ciclo, por lo que vamos a crear una relación entre ambas clases de composición. De igual manera una competencia profesional se compone de un conjunto de módulos formativos (1 o más) por lo que relacionaremos ambas, también mediante composición.
+
+Conjunto de tres clases unidas por relaciones de composición. De izquierda a derecha vemos la clase”Módulo” que está formada por un rectángulo dividido en tres bandas horizontales. En la superior aparece el nombre de la clase que es Módulo, centrado y en negrita. En la banda central aparecen los atributos que son -Nombre: string, -Duración: int y -Contenidos: string, y en la inferior los métodos que son: +matricular(alumno:Alumno) : void y +asignarDuración(duracion: int): void., en el centro la clase “Competencia profesional” formada por un rectángulo azul dividido en dos bandas horizontales con el nombre en la superior y el atributo -Descripcion: string en la inferior. A la derecha está la clase “Ciclo Formativo” con los atributos -Nombre: string, -Descripcion: string y -Horas:int. Módulo se relaciona con Competencia profesional a través de una relación de composición formada por una linea recta  con un rombo de color negro en el extremo de Competencia profesional con cardinalidad 1..* en Módulo y 1 en Competencia profesional. Competencia profesional se relaciona con Ciclo Formativo  a través de una relación de composición formada por una linea recta  con un rombo de color negro en el extremo de Ciclo Formativo con cardinalidad 1..* en Competencia profesional y 1 en Ciclo Formativo.
+
+Un módulo formativo a su vez, contiene un examen y una tarea, que tampoco tienen sentido por si mismos, de modo que también los vamos a relacionarlos mediante composición. El examen por su parte se compone de 30 preguntas, pero éstas pueden tener sentido por si mismas, y pertenecer a diferentes exámenes, además, el hecho de eliminar un examen no va a dar lugar a que las preguntas que lo forman se borren necesariamente, si leemos con atención el enunciado, podemos deducir que las preguntas se seleccionan de un repositorio del que pueden seguir formando parte [... [Los exámenes se componen de 30 preguntas que se eligen y ordenan al azar...], así que en este caso usaremos la relación de agregación para unirlos.
+
+Conjunto de clases unidas por una relaciones de composición. Arriba vemos de izquierda a derecha la clase”Módulo” que está formada por un rectángulo dividido en tres bandas horizontales. En la superior aparece el nombre de la clase que es Módulo, centrado y en negrita. En la banda central aparecen los atributos que son -Nombre: string, -Duración: int y -Contenidos: string, y en la inferior los métodos que son: +matricular(alumno:Alumno) : void y +asignarDuración(duracion: int): void., en el centro la clase “Competencia profesional” formada por un rectángulo azul dividido en dos bandas horizontales con el nombre en la superior y el atributo -Descripcion: string en la inferior. A la derecha está la clase “Ciclo Formativo” con los atributos -Nombre: string, -Descripcion: string y -Horas:int. Módulo se relaciona con Competencia profesional a través de una relación de composición formada por una linea recta  con un rombo de color negro en el extremo de Competencia profesional con cardinalidad 1..* en Módulo y 1 en Competencia profesional. Competencia profesional se relaciona con Ciclo Formativo  a través de una relación de composición formada por una linea recta  con un rombo de color negro en el extremo de Ciclo Formativo con cardinalidad 1..* en Competencia profesional y 1 en Ciclo Formativo. Con Módulo Formativo se relacionan mediante relaciones de composición Examen y Tarea. Examen tiene como métodos +calificar(), +añadirPregunta(), +ordenarPreguntas() y +crearExamen(). Tarea tiene como atributo -Descripción: string. La cardinalidad en ambos casos y extremos de las relaciones es 1. Examen se relaciona por agregación con Pregunta, que tiene como atributos -Enunciado: string, -Respuestas: string[], y -RespuestaValida: int. La relación tiene una cardinalidad de 0..* en el extremo de examen y 30 en el extremo de pregunta.
+Por otra parte alumnos y profesores comparten ciertas características, por necesidad del sistema, como son los datos personales, o el correo electrónico, esto induce a pensar que podemos crear una abstracción con los datos comunes, que de hecho, ya hemos obtenido del enunciado en la clase persona, que recoge las coincidencias entre alumnos y profesores y añadir una relación de herencia de la siguiente manera:
+
+Tres clases en las que se aprecia la herencia. Las clases están representadas como rectángulos de color azul divididos en dos banda horizontales. En la banda superior aparece el nombre de la clase y en el inferior los atributos. En la zona superior de la imagen aparece la clase “Persona” con los atributos -Nombre: string, -Direccion: string, -Telefono: string, -FechaNacimiento: Date, y -correoElectronico: string. Aparece conectada por una línea en forma de T invertida con un triángulo blanco en el extremo de la clase Persona con las clases Profesor, con el atrinbuto -NRP: string y Alumno con  el atributo -notaMedia: float y los métodos +emitirCertificado() y +calcularNotaMedia().
+
+Por último queda relacionar a alumnos y profesores con los módulos formativos. Un alumno se matricula de un conjunto de módulos formativos, y un profesor puede impartir uno o varios módulos formativos.
+
+Más concretamente, de cara a la cardinalidad, un alumno puede estar matriculado en uno o varios módulos, mientras que un módulo puede tener, uno o varios alumnos matriculados. Por su parte un profesor puede impartir uno o varios módulos, aunque un módulo es impartido por un profesor.
+
+Éste análisis da como resultado lo siguiente:
+
+Conjunto de clases en las que se aprecia la herencia. Las clases están representadas como rectángulos de color azul divididos en dos o tres banda horizontales. En la banda superior aparece el nombre de la clase y en las inferiores los atributos y métodos. En la zona superior de la imagen aparece la clase “Persona” con los atributos -Nombre: string, -Direccion: string, -Telefono: string, -FechaNacimiento: Date, y -correoElectronico: string. Aparece conectada por una línea en forma de T invertida con un triángulo blanco en el extremo de la clase Persona con las clases Profesor, con el atrinbuto -NRP: string y Alumno con  el atributo -notaMedia: float y los métodos +emitirCertificado() y +calcularNotaMedia(). Debajode Alumno y Profesor aparece la clase MóduloFormativo con los atributos -Nombre: string, -Duración: int y -Contenidos: string, y los métodos +matricular(alumno:Alumno) : void y +asignarDuración(duracion: int): void. Alumno se relaciona con MóduloFormativo mediante una relación en forma de linea recta etiquetada con Matricula, con cardinalidad 0..* en Alumno y 1..* en ModuloFormativo y Profesor se relaciona con ModuloFormativo a través de un relación etiquetada con Imparte, con cardinalidad 1 en Profesor y 1..* en MóduloFormativo.
+Este sería el diagrama de clases completo:
+Conjunto de clases en las que se aprecia la herencia, composición y agregacion. Las clases están representadas como rectángulos de color azul divididos en dos o tres banda horizontales. En la banda superior aparece el nombre de la clase y en las inferiores los atributos y métodos. En la zona superior de la imagen aparece la clase “Persona” con los atributos -Nombre: string, -Direccion: string, -Telefono: string, -FechaNacimiento: Date, y -correoElectronico: string. Aparece conectada por una línea en forma de T invertida con un triángulo blanco en el extremo de la clase Persona con las clases Profesor, con el atributo -NRP: string y Alumno con  el atributo -notaMedia: float y los métodos +emitirCertificado() y +calcularNotaMedia(). Debajo de Alumno y Profesor aparece la clase MóduloFormativo con los atributos -Nombre: string, -Duración: int y -Contenidos: string, y los métodos +matricular(alumno:Alumno) : void y +asignarDuración(duracion: int): void. Alumno se relaciona con MóduloFormativo mediante una relación en forma de linea recta etiquetada con Matricula, con cardinalidad 0..* en Alumno y 1..* en ModuloFormativo y Profesor se relaciona con ModuloFormativo a través de un relación etiquetada con Imparte, con cardinalidad 1 en Profesor y 1..* en MóduloFormativo. A la derecha de ModuloFormativo está la clase “Competencia profesional” con el atributo -Descripcion: string. A su derecha está la clase “Ciclo Formativo” con los atributos -Nombre: string, -Descripcion: string y -Horas:int. MóduloFormativo se relaciona con Competencia profesional a través de una relación de composición formada por una linea recta con un rombo de color negro en el extremo de Competencia profesional con cardinalidad 1..* en Módulo y 1 en Competencia profesional. Competencia profesional se relaciona con Ciclo Formativo  a través de una relación de composición formada por una linea recta  con un rombo de color negro en el extremo de Ciclo Formativo con cardinalidad 1..* en Competencia profesional y 1 en Ciclo Formativo. Con Módulo Formativo se relacionan mediante relaciones de composición Examen y Tarea. Examen tiene como métodos +calificar(), +añadirPregunta(), +ordenarPreguntas() y +crearExamen(). Tarea tiene como atributo -Descripción: string. La cardinalidad en ambos casos y extremos de las relaciones es 1. Examen se relaciona por agregación con Pregunta, que tiene como atributos -Enunciado: string, -Respuestas: string[], y -RespuestaValida: int. La relación tiene una cardnalidad de 0..* en el extremo de examen y 30 en el extremo de pregunta.
+Añadir Getters, Setters y constructores
+
+Hay que evitar introducir información cuyo aporte funcional no sea muy relevante. Por ejemplo, en los programas aparecerán métodos constructores, getters, setters ..., todos ellos importantes en el código durante la programación, pero en ocasiones poco relevantes desde una perspectiva de definición de funciones de la clase.
+
+Por último añadimos los métodos que permiten crear los objetos de las clases (constructores) así como los que permiten establecer los valores de los atributos no calculados y leerlos (getters y setters), recuerda que para tener éstos métodos completos es necesario que el atributo tenga establecido su tipo, para que sea tenido en cuenta.
+
+Para añadir los getters y setters en Visual Paradigm, basta con desplegar el menú contextual del atributo y seleccionar la opción Create Getter and Setter.
+
+También hay que añadir los métodos que no se infieren de la lectura del enunciado, por ejemplo los que permiten añadir módulos a las competencias, o competencias a los ciclos. Para comprobar estos métodos puedes descargar el diagrama de clases en un proyecto VP-UML un poco más adelante.
+
+f.- Documentación adicional.
+Por último se debe rellenar la documentación de cada clase, atributo y método con una descripción de los mismos que será necesaria para la generación de informes posterior. A continuación se listan las clases con su documentación:
+
+Persona: Generalización para agrupar las características comunes de alumnos y profesores como personas que interactúan con el sistema. De una persona interesa conocer su nombre, dirección, teléfono, alias y correo electrónico.
+Alumno: Es un tipo de persona. Representa a las personas que se matriculan de un ciclo formativo. Un alumno puede estar matriculado durante varios años en un ciclo. Está matriculado de un ciclo siempre que está matriculado en algún módulo que forme parte del ciclo. Para aprobar un Ciclo hay que superar todos los módulos que lo componen. Para superar un módulo hay que realizar la tarea y aprobar el examen, que está compuesto de 30 preguntas de tipo test, con cuatro respuestas posibles una de las cuales es la correcta. De un alumno interesa almacenar su nota media.
+Profesor: Es un tipo de persona. Representa a las personas que imparten los módulos formativos. Evalúan las tareas que realizan los alumnos y se encargan de poner los contenidos a disposición de los alumnos. De un profesor interesa almacenar su número de registro personal.
+Ciclo Formativo a Distancia: Es uno de los núcleos centrales del sistema. Representa los estudios que se pueden realizar a distancia. Un ciclo formativo se compone de un conjunto de competencias profesionales que se componen a su vez de módulos formativos. Se aprueba un ciclo formativo cuando se adquieren todas las competencias que lo forman. De un ciclo formativos se almacena su nombre, descripción y horas totales.
+Competencia Profesional: Representan el conjunto de conocimientos generales que se adquieren cuando se completa un ciclo formativo. Se componen de módulos profesionales y se adquiere una competencia cuando se superan los módulos que la componen. De una competencia se almacena su descripción.
+Módulo Formativo: Unidades formativas que cursa un alumno. Un módulo formativo tiene una serie de contenidos que el alumno debe estudiar, y una tarea y un examen que el alumno debe hacer. Cuando se aprueban la tarea y el examen se supera el módulo. De un módulo se almacena su nombre, duración y contenidos.
+Tarea: Actividad relacionada con los contenidos de un módulo que debe realizar un alumno. Tiene una puntuación de uno a diez y es evaluada por el profesor. La nota se asigna a cada alumno para la matrícula del módulo al que pertenece la tarea. De una tarea se almacena su descripción.
+Examen: Conjunto de treinta preguntas que se evalúa de uno a diez. Un examen puede desordenarse y calificarse calculando cuantas preguntas son correctas.
+Pregunta: Forman los exámenes de un módulo. Se compone del enunciado y cuatro posibles respuestas de las cuales sólo una es válida.
+g.- Generación de código a partir del diagrama de clases.
+Ejercicio Propuesto
+A raíz de ese diagrama de clases se puede generar el siguiente código (usando Java como lenguaje de programación):
+
+
+Anexo IV.- Generación del diagrama de clases de otro problema dado.
+Descripción del problema
+
+La empresa Truan dedicada a recambios de coches necesita una aplicación para gestionar sus ventas. La empresa está compuesta de una serie de sedes repartidas en diferentes provincias (Id de la sede y provincia). Por su parte la empresa informará del número total de empleados que tiene.
+
+Cada sede lleva a cabo su actividad con autónomos que tendrán datos como el nombre, CIF, teléfono y dirección; y serán del tipo proveedores (que además informarán de su código) o talleres (que informarán de su especialización chapa o mecánica).
+
+Cada sede compra las piezas a distintos proveedores para después venderlas a los talleres.
+
+Cada pieza de recambio tiene un código que la identifica y un único proveedor que puede proporcionarla. También tiene un precio de compra al proveedor y un precio de venta a los talleres. Las operaciones que se quieren hacer sobre la pieza son modificar los dos precios.
+
+Cada sede quiere poder dar de alta nuevos proveedores. Además, las sedes quieren mantener la información de los talleres con los que trabaja.
+
+Por motivos de aranceles, si la sede es Canarias no se podrá trabajar con el proveedor con código 666.
+
+a.- Extracción de los sustantivos de la descripción del problema.
+La empresa Truan dedicada a recambios de coches necesita una aplicación para gestionar sus ventas. La empresa está compuesta de una serie de sedes repartidas en diferentes provincias (Id de la sede y provincia). Por su parte la empresa informará del número total de empleados que tiene.
+
+Cada sede lleva a cabo su actividad con autónomos que tendrán datos como el nombre, CIF, teléfono y dirección; y serán del tipo proveedores (que además informarán de su código) o talleres (que informarán de su especialización chapa o mecánica).
+
+Cada sede compra las piezas a distintos proveedores para después venderlas a los talleres.
+
+Cada pieza de recambio tiene un código que la identifica y un único proveedor que puede proporcionarla. También tiene un precio de compra al proveedor y un precio de venta a los talleres. Las operaciones que se quieren hacer sobre la pieza son modificar los dos precios.
+
+Cada sede quiere poder dar de alta nuevos proveedores. Además, las sedes quieren mantener la información de los talleres con los que trabaja.
+
+Por motivos de aranceles, si la sede es Canarias no se podrá trabajar con el proveedor con código 666.
+
+b.- Selección de sustantivos como objetos/clases del sistema.
+Ahora aplicamos los criterios de selección de clases. En este apartado es necesario destacar que aunque algunos de los sustantivos que tenemos en el enunciado podrían llegar a convertirse en clases y objetos, el proceso de creación de diagramas no es inmediato, sino que está sujeto a revisiones, cambios y adaptaciones hasta tener un resultado final completo.
+
+c.- Tabla de relación de las clases u objetos con sus atributos.
+Clase/objeto potencial	Atributos
+Empresa Truan.	Empleados.
+Autónomo.	Nombre, CIF, Teléfono, Dirección.
+Proveedor.	Código.
+Taller.	Tipo.
+Sede.	Id_Sede, Nombre.
+Pieza.	CódigoPieza, PrecioCompra, PrecioVenta.
+Anterior
+d.- Obtención de los métodos.
+Clase/objeto potencial	Atributos
+Empresa Truan.	+ numEmpl(): int
+Autónomo.	
+Proveedor.	+ codigoProv(): int
+Taller.	
+Sede.	+ altaProveedor(): void
++ infoTaller(): Taller
+Pieza.	+ ponerPrecioCompra(): void
++ ponerPrecioVenta(): void
+e.- Obtener relaciones.
+Con las clases ya extraídas y parcialmente definidas (aún faltan por añadir métodos y atributos inferidos de posteriores refinamientos y de nuestro conocimiento) podemos empezar a construir relaciones entre ellas.
+
+Del enunciado se puede suponer que la empresa Truan es una composición de sedes y que no tiene sentido la existencia de sedes en caso de desaparecer la empresa. En la relación de composición la cardinalidad en el lado de la clase más general siempre es 1. En este caso particular, se considera que la empresa puede tener varias sedes o todavía no tener ninguna adherida.
+
+Dos clases formadas por rectángulos azules una de nombre “Truan” y otra “Sede” unidas por una línea recta y horizontal etiquetada con “1 0..*”. La clase “Truan” está dividida en 3 bandas iguales. . En la banda superior aparece el nombre “Truan”, en la banda central el atributo “-Empleados: int”, y en la inferior el módulo “+numEmpl(): int”. La clase “Sede” está dividida también en 3 bandas horizontales. En la superior pone “Sede”, en la central los atributos que son “id_sede:int” y “Nombre:string” y en la inferior los módulos “+altaProveedor():void” y “infoTaller():Taller”.
+
+Por otro lado, tanto los proveedores como los talleres actúan como autónomos, compartiendo ciertas características comunes, por lo que resultará útil definir una relación de generalización-herencia.
+
+
+
+Cada pieza habrá sido distribuida por un proveedor y podrá haber sido adquirida por una sede y entrega a un taller.
+Una sede que acaba de ser dada de alta, no dispondrá de proveedores ni talleres con los que trabajar inicialmente, ni dispondrá de piezas para suministrar. No obstante, con el tiempo, la sede podrá tener una relación con varios objetos de cada una de estas tres clases.
+Cuatro clases que están todas conectadas entre sí por una línea representadas como rectángulos de color azul divididos en tres banda recta y horizontal etiquetada con “0..*”. . Las clases están horizontales. En la banda superior aparece el nombre de la clase, en la central los atributos y en el inferior los módulos. En la esquina inferior aparece la clase Pieza con atributos –CodigoPieza:int, -PrecioCompra:int y -PrecioVenta:int y módulos +ponerPrecioCompra().void y +ponerPrecioVenta().void. En la parte superior aparece la clase Sede con atributos “id_sede:int” y “Nombre:string” y módulos “+altaProveedor():void” y “infoTaller():Taller”. Por último, encontramos en la parte izquierda las clases Taller con el atributo -Tipo: string y Proveedor con el atributo –Código:int y el módulo +códigoProv[]: int.
+Para terminar, el enunciado advierte que el proveedor con código 666 no puede operar en Canarias; este aspecto quedará reflejado en el diagrama mediante una restricción, indicando tal circunstacia entre llaves.
+Este sería el diagrama de clases completo:
+Conjunto de clases en las que se aprecia la herencia, composición y agregacion. Las clases están representadas como rectángulos de color azul divididos en dos o tres banda horizontales. En la banda superior aparece el nombre de la clase y en las inferiores los atributos y métodos. En la zona superior de la imagen aparece la clase “Autónomo” con los atributos con los atributos -Nombre: string, -CIF: string, -Telefono: int, -Dirección: string. Aparece conectada por una línea en forma de T invertida con un triángulo blanco en el extremo de la clase Proveedor con el atributo –Código:int y el módulo +códigoProv[]: int y Taller con el atributo -Tipo: string.  A la derecha de ambos aparece la clase Pieza con atributos –CodigoPieza:int, -PrecioCompra:int y -PrecioVenta:int y módulos +ponerPrecioCompra().void y +ponerPrecioVenta().void. Las clases Proveedor, Taller y Pieza se relacionan con Sede mediante una relación en forma de linea etiquetada con cardinalidad 0..* con atributos “id_sede:int” y “Nombre:string” y módulos “+altaProveedor():void” y “infoTaller():Taller”. Por último, la clase Sede están conectadas con la clase Truan por una línea recta y horizontal etiquetada con “1 0..*”. La clase “Truan” está dividida en 3 bandas iguales. . En la banda superior aparece el nombre “Truan”, en la banda central el atributo “-Empleados: int”, y en la inferior el módulo “+numEmpl(): int”.
+f.- Documentación adicional.
+El diagrama de clases, deberá ir acompañado de una descripción en texto referente a cada clase, sus atributos y métodos.
+
+Clase/objeto potencial	Descripción
+Empresa Truan.	Las empresas se construyen a partir de sedes e informan del número de empleados que tienen.
+Autónomo.	Generalización para agrupar las características comunes de proveedores y talleres. Informa del nombre, CIF, teléfono y dirección.
+Proveedor.	Es un tipo de autónomo. Suministra piezas a las sedes. Un proveedor puede trabajar para varias sedes, con excepción del proveedor con código 666, que no podrá suministrar piezas a la sede de Canarias. Informa de su código de proveedor.
+Taller.	Es un tipo de autónomo. Receptor de las piezas disponibles en las sedes. Un taller puede ser destinatario de piezas cuyo origen sea sedes distintas. Informa del tipo de actividad de taller.
+Sede.	La agregación de sedes construyen la empresa. Las sedes reciben piezas de los proveedores y las distribuyen a los talleres. Informa de su nombre e id.
+Pieza.	Cada pieza habrá sido desarrollada por un proveedor y puede haber sido entregada a un taller. Las sedes son las intermediarias entre proveedores y talleres en la distribución de piezas. Informa de su identificador y de los precios de compra y venta.
+g.- Generación de código a partir del diagrama de clases.
+Ejercicio Propuesto
+A raíz del diagrama resultante de este ejercicio, indica las clases del proyecto y los datos que tendrían dichas clases (usando Java como lenguaje de programación):
+
+
